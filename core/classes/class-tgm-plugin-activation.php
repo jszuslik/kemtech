@@ -330,79 +330,79 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 
 			// Load class strings.
 			$this->strings = array(
-				'page_title'                      => __( 'Install Required Plugins', NRW_TEXT_DOMAIN ),
-				'menu_title'                      => __( 'Install Plugins', NRW_TEXT_DOMAIN ),
-				'installing'                      => __( 'Installing Plugin: %s', NRW_TEXT_DOMAIN ),
-				'oops'                            => __( 'Something went wrong with the plugin API.', NRW_TEXT_DOMAIN ),
+				'page_title'                      => __( 'Install Required Plugins', LNX_TEXT_DOMAIN ),
+				'menu_title'                      => __( 'Install Plugins', LNX_TEXT_DOMAIN ),
+				'installing'                      => __( 'Installing Plugin: %s', LNX_TEXT_DOMAIN ),
+				'oops'                            => __( 'Something went wrong with the plugin API.', LNX_TEXT_DOMAIN ),
 				'notice_can_install_required'     => _n_noop(
 					'This theme requires the following plugin: %1$s.',
 					'This theme requires the following plugins: %1$s.',
-                    NRW_TEXT_DOMAIN
+                    LNX_TEXT_DOMAIN
 				),
 				'notice_can_install_recommended'  => _n_noop(
 					'This theme recommends the following plugin: %1$s.',
 					'This theme recommends the following plugins: %1$s.',
-                    NRW_TEXT_DOMAIN
+                    LNX_TEXT_DOMAIN
 				),
 				'notice_cannot_install'           => _n_noop(
 					'Sorry, but you do not have the correct permissions to install the %1$s plugin.',
 					'Sorry, but you do not have the correct permissions to install the %1$s plugins.',
-                    NRW_TEXT_DOMAIN
+                    LNX_TEXT_DOMAIN
 				),
 				'notice_ask_to_update'            => _n_noop(
 					'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.',
 					'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.',
-                    NRW_TEXT_DOMAIN
+                    LNX_TEXT_DOMAIN
 				),
 				'notice_ask_to_update_maybe'      => _n_noop(
 					'There is an update available for: %1$s.',
 					'There are updates available for the following plugins: %1$s.',
-                    NRW_TEXT_DOMAIN
+                    LNX_TEXT_DOMAIN
 				),
 				'notice_cannot_update'            => _n_noop(
 					'Sorry, but you do not have the correct permissions to update the %1$s plugin.',
 					'Sorry, but you do not have the correct permissions to update the %1$s plugins.',
-                    NRW_TEXT_DOMAIN
+                    LNX_TEXT_DOMAIN
 				),
 				'notice_can_activate_required'    => _n_noop(
 					'The following required plugin is currently inactive: %1$s.',
 					'The following required plugins are currently inactive: %1$s.',
-                    NRW_TEXT_DOMAIN
+                    LNX_TEXT_DOMAIN
 				),
 				'notice_can_activate_recommended' => _n_noop(
 					'The following recommended plugin is currently inactive: %1$s.',
 					'The following recommended plugins are currently inactive: %1$s.',
-                    NRW_TEXT_DOMAIN
+                    LNX_TEXT_DOMAIN
 				),
 				'notice_cannot_activate'          => _n_noop(
 					'Sorry, but you do not have the correct permissions to activate the %1$s plugin.',
 					'Sorry, but you do not have the correct permissions to activate the %1$s plugins.',
-                    NRW_TEXT_DOMAIN
+                    LNX_TEXT_DOMAIN
 				),
 				'install_link'                    => _n_noop(
 					'Begin installing plugin',
 					'Begin installing plugins',
-                    NRW_TEXT_DOMAIN
+                    LNX_TEXT_DOMAIN
 				),
 				'update_link'                     => _n_noop(
 					'Begin updating plugin',
 					'Begin updating plugins',
-                    NRW_TEXT_DOMAIN
+                    LNX_TEXT_DOMAIN
 				),
 				'activate_link'                   => _n_noop(
 					'Begin activating plugin',
 					'Begin activating plugins',
-                    NRW_TEXT_DOMAIN
+                    LNX_TEXT_DOMAIN
 				),
-				'return'                          => __( 'Return to Required Plugins Installer', NRW_TEXT_DOMAIN ),
-				'dashboard'                       => __( 'Return to the dashboard', NRW_TEXT_DOMAIN ),
-				'plugin_activated'                => __( 'Plugin activated successfully.', NRW_TEXT_DOMAIN ),
-				'activated_successfully'          => __( 'The following plugin was activated successfully:', NRW_TEXT_DOMAIN ),
-				'plugin_already_active'           => __( 'No action taken. Plugin %1$s was already active.', NRW_TEXT_DOMAIN ),
-				'plugin_needs_higher_version'     => __( 'Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin.', NRW_TEXT_DOMAIN ),
-				'complete'                        => __( 'All plugins installed and activated successfully. %1$s', NRW_TEXT_DOMAIN ),
-				'dismiss'                         => __( 'Dismiss this notice', NRW_TEXT_DOMAIN ),
-				'contact_admin'                   => __( 'Please contact the administrator of this site for help.', NRW_TEXT_DOMAIN ),
+				'return'                          => __( 'Return to Required Plugins Installer', LNX_TEXT_DOMAIN ),
+				'dashboard'                       => __( 'Return to the dashboard', LNX_TEXT_DOMAIN ),
+				'plugin_activated'                => __( 'Plugin activated successfully.', LNX_TEXT_DOMAIN ),
+				'activated_successfully'          => __( 'The following plugin was activated successfully:', LNX_TEXT_DOMAIN ),
+				'plugin_already_active'           => __( 'No action taken. Plugin %1$s was already active.', LNX_TEXT_DOMAIN ),
+				'plugin_needs_higher_version'     => __( 'Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin.', LNX_TEXT_DOMAIN ),
+				'complete'                        => __( 'All plugins installed and activated successfully. %1$s', LNX_TEXT_DOMAIN ),
+				'dismiss'                         => __( 'Dismiss this notice', LNX_TEXT_DOMAIN ),
+				'contact_admin'                   => __( 'Please contact the administrator of this site for help.', LNX_TEXT_DOMAIN ),
 			);
 
 			do_action( 'tgmpa_register' );
@@ -517,8 +517,8 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 			$actions['update'] = sprintf(
 				'<a href="%1$s" title="%2$s" class="edit">%3$s</a>',
 				esc_url( $this->get_tgmpa_status_url( 'update' ) ),
-				esc_attr__( 'This plugin needs to be updated to be compatible with your theme.', NRW_TEXT_DOMAIN ),
-				esc_html__( 'Update Required', NRW_TEXT_DOMAIN )
+				esc_attr__( 'This plugin needs to be updated to be compatible with your theme.', LNX_TEXT_DOMAIN ),
+				esc_html__( 'Update Required', LNX_TEXT_DOMAIN )
 			);
 
 			return $actions;
@@ -632,7 +632,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 		 */
 		protected function add_admin_menu( array $args ) {
 			if ( has_filter( 'tgmpa_admin_menu_use_add_theme_page' ) ) {
-				_deprecated_function( 'The "tgmpa_admin_menu_use_add_theme_page" filter', '2.5.0', esc_html__( 'Set the parent_slug config variable instead.', NRW_TEXT_DOMAIN ) );
+				_deprecated_function( 'The "tgmpa_admin_menu_use_add_theme_page" filter', '2.5.0', esc_html__( 'Set the parent_slug config variable instead.', LNX_TEXT_DOMAIN ) );
 			}
 
 			if ( 'themes.php' === $this->parent_slug ) {
@@ -825,7 +825,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 
 				// Display message based on if all plugins are now active or not.
 				if ( $this->is_tgmpa_complete() ) {
-					echo '<p>', sprintf( esc_html( $this->strings['complete'] ), '<a href="' . esc_url( self_admin_url() ) . '">' . esc_html__( 'Return to the Dashboard', NRW_TEXT_DOMAIN ) . '</a>' ), '</p>';
+					echo '<p>', sprintf( esc_html( $this->strings['complete'] ), '<a href="' . esc_url( self_admin_url() ) . '">' . esc_html__( 'Return to the Dashboard', LNX_TEXT_DOMAIN ) . '</a>' ), '</p>';
 					echo '<style type="text/css">#adminmenu .wp-submenu li.current { display: none !important; }</style>';
 				} else {
 					echo '<p><a href="', esc_url( $this->get_tgmpa_url() ), '" target="_parent">', esc_html( $this->strings['return'] ), '</a></p>';
@@ -932,10 +932,10 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 					if ( true === $GLOBALS['wp_filesystem']->move( $from, $to ) ) {
 						return trailingslashit( $to );
 					} else {
-						return new WP_Error( 'rename_failed', esc_html__( 'The remote plugin package does not contain a folder with the desired slug and renaming did not work.', NRW_TEXT_DOMAIN ) . ' ' . esc_html__( 'Please contact the plugin provider and ask them to package their plugin according to the WordPress guidelines.', NRW_TEXT_DOMAIN ), array( 'found' => $subdir_name, 'expected' => $desired_slug ) );
+						return new WP_Error( 'rename_failed', esc_html__( 'The remote plugin package does not contain a folder with the desired slug and renaming did not work.', LNX_TEXT_DOMAIN ) . ' ' . esc_html__( 'Please contact the plugin provider and ask them to package their plugin according to the WordPress guidelines.', LNX_TEXT_DOMAIN ), array( 'found' => $subdir_name, 'expected' => $desired_slug ) );
 					}
 				} elseif ( empty( $subdir_name ) ) {
-					return new WP_Error( 'packaged_wrong', esc_html__( 'The remote plugin package consists of more than one file, but the files are not packaged in a folder.', NRW_TEXT_DOMAIN ) . ' ' . esc_html__( 'Please contact the plugin provider and ask them to package their plugin according to the WordPress guidelines.', NRW_TEXT_DOMAIN ), array( 'found' => $subdir_name, 'expected' => $desired_slug ) );
+					return new WP_Error( 'packaged_wrong', esc_html__( 'The remote plugin package consists of more than one file, but the files are not packaged in a folder.', LNX_TEXT_DOMAIN ) . ' ' . esc_html__( 'Please contact the plugin provider and ask them to package their plugin according to the WordPress guidelines.', LNX_TEXT_DOMAIN ), array( 'found' => $subdir_name, 'expected' => $desired_slug ) );
 				}
 			}
 
@@ -1113,12 +1113,12 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 					$count          = count( $plugin_group );
 					$linked_plugins = array_map( array( 'TGMPA_Utils', 'wrap_in_em' ), $linked_plugins );
 					$last_plugin    = array_pop( $linked_plugins ); // Pop off last name to prep for readability.
-					$imploded       = empty( $linked_plugins ) ? $last_plugin : ( implode( ', ', $linked_plugins ) . ' ' . esc_html_x( 'and', 'plugin A *and* plugin B', NRW_TEXT_DOMAIN ) . ' ' . $last_plugin );
+					$imploded       = empty( $linked_plugins ) ? $last_plugin : ( implode( ', ', $linked_plugins ) . ' ' . esc_html_x( 'and', 'plugin A *and* plugin B', LNX_TEXT_DOMAIN ) . ' ' . $last_plugin );
 
 					$rendered .= sprintf(
 						$line_template,
 						sprintf(
-							translate_nooped_plural( $this->strings[ $type ], $count, NRW_TEXT_DOMAIN ),
+							translate_nooped_plural( $this->strings[ $type ], $count, LNX_TEXT_DOMAIN ),
 							$imploded,
 							$count
 						)
@@ -1144,14 +1144,14 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 					if ( $install_link_count > 0 ) {
 						$action_links['install'] = sprintf(
 							$link_template,
-							translate_nooped_plural( $this->strings['install_link'], $install_link_count, NRW_TEXT_DOMAIN ),
+							translate_nooped_plural( $this->strings['install_link'], $install_link_count, LNX_TEXT_DOMAIN ),
 							esc_url( $this->get_tgmpa_status_url( 'install' ) )
 						);
 					}
 					if ( $update_link_count > 0 ) {
 						$action_links['update'] = sprintf(
 							$link_template,
-							translate_nooped_plural( $this->strings['update_link'], $update_link_count, NRW_TEXT_DOMAIN ),
+							translate_nooped_plural( $this->strings['update_link'], $update_link_count, LNX_TEXT_DOMAIN ),
 							esc_url( $this->get_tgmpa_status_url( 'update' ) )
 						);
 					}
@@ -1160,7 +1160,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 				if ( current_user_can( 'activate_plugins' ) && $activate_link_count > 0 ) {
 					$action_links['activate'] = sprintf(
 						$link_template,
-						translate_nooped_plural( $this->strings['activate_link'], $activate_link_count, NRW_TEXT_DOMAIN ),
+						translate_nooped_plural( $this->strings['activate_link'], $activate_link_count, LNX_TEXT_DOMAIN ),
 						esc_url( $this->get_tgmpa_status_url( 'activate' ) )
 					);
 				}
@@ -1176,10 +1176,10 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 
 				// Register the nag messages and prepare them to be processed.
 				if ( ! empty( $this->strings['nag_type'] ) ) {
-					add_settings_error( NRW_TEXT_DOMAIN, NRW_TEXT_DOMAIN, $rendered, sanitize_html_class( strtolower( $this->strings['nag_type'] ) ) );
+					add_settings_error( LNX_TEXT_DOMAIN, LNX_TEXT_DOMAIN, $rendered, sanitize_html_class( strtolower( $this->strings['nag_type'] ) ) );
 				} else {
 					$nag_class = version_compare( $this->wp_version, '3.8', '<' ) ? 'updated' : 'update-nag';
-					add_settings_error( NRW_TEXT_DOMAIN, NRW_TEXT_DOMAIN, $rendered, $nag_class );
+					add_settings_error( LNX_TEXT_DOMAIN, LNX_TEXT_DOMAIN, $rendered, $nag_class );
 				}
 			}
 
@@ -1197,10 +1197,10 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 		protected function display_settings_errors() {
 			global $wp_settings_errors;
 
-			settings_errors( NRW_TEXT_DOMAIN );
+			settings_errors( LNX_TEXT_DOMAIN );
 
 			foreach ( (array) $wp_settings_errors as $key => $details ) {
-				if ( NRW_TEXT_DOMAIN === $details['setting'] ) {
+				if ( LNX_TEXT_DOMAIN === $details['setting'] ) {
 					unset( $wp_settings_errors[ $key ] );
 					break;
 				}
@@ -1878,7 +1878,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 		 */
 		public function show_tgmpa_version() {
 			echo '<p style="float: right; padding: 0em 1.5em 0.5em 0;"><strong><small>',
-				esc_html( sprintf( _x( 'TGMPA v%s', '%s = version number', NRW_TEXT_DOMAIN ), self::TGMPA_VERSION ) ),
+				esc_html( sprintf( _x( 'TGMPA v%s', '%s = version number', LNX_TEXT_DOMAIN ), self::TGMPA_VERSION ) ),
 				'</small></strong></p>';
 		}
 
@@ -1903,7 +1903,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 		 * Ensure only one instance of the class is ever invoked.
 		 */
 		function load_tgm_plugin_activation() {
-			$GLOBALS[NRW_TEXT_DOMAIN] = TGM_Plugin_Activation::get_instance();
+			$GLOBALS[LNX_TEXT_DOMAIN] = TGM_Plugin_Activation::get_instance();
 		}
 	}
 
@@ -1914,7 +1914,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 	}
 }
 
-if ( ! function_exists( NRW_TEXT_DOMAIN ) ) {
+if ( ! function_exists( LNX_TEXT_DOMAIN ) ) {
 	/**
 	 * Helper function to register a collection of required plugins.
 	 *
@@ -1925,7 +1925,7 @@ if ( ! function_exists( NRW_TEXT_DOMAIN ) ) {
 	 * @param array $config  Optional. An array of configuration values.
 	 */
 	function tgmpa( $plugins, $config = array() ) {
-		$instance = call_user_func( array( get_class( $GLOBALS[NRW_TEXT_DOMAIN] ), 'get_instance' ) );
+		$instance = call_user_func( array( get_class( $GLOBALS[LNX_TEXT_DOMAIN] ), 'get_instance' ) );
 
 		foreach ( $plugins as $plugin ) {
 			call_user_func( array( $instance, 'register' ), $plugin );
@@ -2020,7 +2020,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 		 * @since 2.2.0
 		 */
 		public function __construct() {
-			$this->tgmpa = call_user_func( array( get_class( $GLOBALS[NRW_TEXT_DOMAIN] ), 'get_instance' ) );
+			$this->tgmpa = call_user_func( array( get_class( $GLOBALS[LNX_TEXT_DOMAIN] ), 'get_instance' ) );
 
 			parent::__construct(
 				array(
@@ -2164,10 +2164,10 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 		 */
 		protected function get_plugin_advise_type_text( $required ) {
 			if ( true === $required ) {
-				return __( 'Required', NRW_TEXT_DOMAIN );
+				return __( 'Required', LNX_TEXT_DOMAIN );
 			}
 
-			return __( 'Recommended', NRW_TEXT_DOMAIN );
+			return __( 'Recommended', LNX_TEXT_DOMAIN );
 		}
 
 		/**
@@ -2183,13 +2183,13 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 
 			switch ( $type ) {
 				case 'repo':
-					$string = __( 'WordPress Repository', NRW_TEXT_DOMAIN );
+					$string = __( 'WordPress Repository', LNX_TEXT_DOMAIN );
 					break;
 				case 'external':
-					$string = __( 'External Source', NRW_TEXT_DOMAIN );
+					$string = __( 'External Source', LNX_TEXT_DOMAIN );
 					break;
 				case 'bundled':
-					$string = __( 'Pre-Packaged', NRW_TEXT_DOMAIN );
+					$string = __( 'Pre-Packaged', LNX_TEXT_DOMAIN );
 					break;
 			}
 
@@ -2206,25 +2206,25 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 		 */
 		protected function get_plugin_status_text( $slug ) {
 			if ( ! $this->tgmpa->is_plugin_installed( $slug ) ) {
-				return __( 'Not Installed', NRW_TEXT_DOMAIN );
+				return __( 'Not Installed', LNX_TEXT_DOMAIN );
 			}
 
 			if ( ! $this->tgmpa->is_plugin_active( $slug ) ) {
-				$install_status = __( 'Installed But Not Activated', NRW_TEXT_DOMAIN );
+				$install_status = __( 'Installed But Not Activated', LNX_TEXT_DOMAIN );
 			} else {
-				$install_status = __( 'Active', NRW_TEXT_DOMAIN );
+				$install_status = __( 'Active', LNX_TEXT_DOMAIN );
 			}
 
 			$update_status = '';
 
 			if ( $this->tgmpa->does_plugin_require_update( $slug ) && false === $this->tgmpa->does_plugin_have_update( $slug ) ) {
-				$update_status = __( 'Required Update not Available', NRW_TEXT_DOMAIN );
+				$update_status = __( 'Required Update not Available', LNX_TEXT_DOMAIN );
 
 			} elseif ( $this->tgmpa->does_plugin_require_update( $slug ) ) {
-				$update_status = __( 'Requires Update', NRW_TEXT_DOMAIN );
+				$update_status = __( 'Requires Update', LNX_TEXT_DOMAIN );
 
 			} elseif ( false !== $this->tgmpa->does_plugin_have_update( $slug ) ) {
-				$update_status = __( 'Update recommended', NRW_TEXT_DOMAIN );
+				$update_status = __( 'Update recommended', LNX_TEXT_DOMAIN );
 			}
 
 			if ( '' === $update_status ) {
@@ -2232,7 +2232,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 			}
 
 			return sprintf(
-				_x( '%1$s, %2$s', '%1$s = install status, %2$s = update status', NRW_TEXT_DOMAIN ),
+				_x( '%1$s, %2$s', '%1$s = install status, %2$s = update status', LNX_TEXT_DOMAIN ),
 				$install_status,
 				$update_status
 			);
@@ -2277,16 +2277,16 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 
 				switch ( $type ) {
 					case 'all':
-						$text = _nx( 'All <span class="count">(%s)</span>', 'All <span class="count">(%s)</span>', $count, 'plugins', NRW_TEXT_DOMAIN );
+						$text = _nx( 'All <span class="count">(%s)</span>', 'All <span class="count">(%s)</span>', $count, 'plugins', LNX_TEXT_DOMAIN );
 						break;
 					case 'install':
-						$text = _n( 'To Install <span class="count">(%s)</span>', 'To Install <span class="count">(%s)</span>', $count, NRW_TEXT_DOMAIN );
+						$text = _n( 'To Install <span class="count">(%s)</span>', 'To Install <span class="count">(%s)</span>', $count, LNX_TEXT_DOMAIN );
 						break;
 					case 'update':
-						$text = _n( 'Update Available <span class="count">(%s)</span>', 'Update Available <span class="count">(%s)</span>', $count, NRW_TEXT_DOMAIN );
+						$text = _n( 'Update Available <span class="count">(%s)</span>', 'Update Available <span class="count">(%s)</span>', $count, LNX_TEXT_DOMAIN );
 						break;
 					case 'activate':
-						$text = _n( 'To Activate <span class="count">(%s)</span>', 'To Activate <span class="count">(%s)</span>', $count, NRW_TEXT_DOMAIN );
+						$text = _n( 'To Activate <span class="count">(%s)</span>', 'To Activate <span class="count">(%s)</span>', $count, LNX_TEXT_DOMAIN );
 						break;
 					default:
 						$text = '';
@@ -2368,7 +2368,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 			$output = array();
 
 			if ( $this->tgmpa->is_plugin_installed( $item['slug'] ) ) {
-				$installed = ! empty( $item['installed_version'] ) ? $item['installed_version'] : _x( 'unknown', 'as in: "version nr unknown"', NRW_TEXT_DOMAIN );
+				$installed = ! empty( $item['installed_version'] ) ? $item['installed_version'] : _x( 'unknown', 'as in: "version nr unknown"', LNX_TEXT_DOMAIN );
 
 				$color = '';
 				if ( ! empty( $item['minimum_version'] ) && $this->tgmpa->does_plugin_require_update( $item['slug'] ) ) {
@@ -2376,7 +2376,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 				}
 
 				$output[] = sprintf(
-					'<p><span style="min-width: 32px; text-align: right; float: right;%1$s">%2$s</span>' . __( 'Installed version:', NRW_TEXT_DOMAIN ) . '</p>',
+					'<p><span style="min-width: 32px; text-align: right; float: right;%1$s">%2$s</span>' . __( 'Installed version:', LNX_TEXT_DOMAIN ) . '</p>',
 					$color,
 					$installed
 				);
@@ -2384,7 +2384,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 
 			if ( ! empty( $item['minimum_version'] ) ) {
 				$output[] = sprintf(
-					'<p><span style="min-width: 32px; text-align: right; float: right;">%1$s</span>' . __( 'Minimum required version:', NRW_TEXT_DOMAIN ) . '</p>',
+					'<p><span style="min-width: 32px; text-align: right; float: right;">%1$s</span>' . __( 'Minimum required version:', LNX_TEXT_DOMAIN ) . '</p>',
 					$item['minimum_version']
 				);
 			}
@@ -2396,7 +2396,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 				}
 
 				$output[] = sprintf(
-					'<p><span style="min-width: 32px; text-align: right; float: right;%1$s">%2$s</span>' . __( 'Available version:', NRW_TEXT_DOMAIN ) . '</p>',
+					'<p><span style="min-width: 32px; text-align: right; float: right;%1$s">%2$s</span>' . __( 'Available version:', LNX_TEXT_DOMAIN ) . '</p>',
 					$color,
 					$item['available_version']
 				);
@@ -2419,7 +2419,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 		 * @since 2.2.0
 		 */
 		public function no_items() {
-			printf( wp_kses_post( __( 'No plugins to install, update or activate. <a href="%1$s">Return to the Dashboard</a>', NRW_TEXT_DOMAIN ) ), esc_url( self_admin_url() ) );
+			printf( wp_kses_post( __( 'No plugins to install, update or activate. <a href="%1$s">Return to the Dashboard</a>', LNX_TEXT_DOMAIN ) ), esc_url( self_admin_url() ) );
 			echo '<style type="text/css">#adminmenu .wp-submenu li.current { display: none !important; }</style>';
 		}
 
@@ -2433,14 +2433,14 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 		public function get_columns() {
 			$columns = array(
 				'cb'     => '<input type="checkbox" />',
-				'plugin' => __( 'Plugin', NRW_TEXT_DOMAIN ),
-				'source' => __( 'Source', NRW_TEXT_DOMAIN ),
-				'type'   => __( 'Type', NRW_TEXT_DOMAIN ),
+				'plugin' => __( 'Plugin', LNX_TEXT_DOMAIN ),
+				'source' => __( 'Source', LNX_TEXT_DOMAIN ),
+				'type'   => __( 'Type', LNX_TEXT_DOMAIN ),
 			);
 
 			if ( 'all' === $this->view_context || 'update' === $this->view_context ) {
-				$columns['version'] = __( 'Version', NRW_TEXT_DOMAIN );
-				$columns['status']  = __( 'Status', NRW_TEXT_DOMAIN );
+				$columns['version'] = __( 'Version', LNX_TEXT_DOMAIN );
+				$columns['status']  = __( 'Status', LNX_TEXT_DOMAIN );
 			}
 
 			return apply_filters( 'tgmpa_table_columns', $columns );
@@ -2488,16 +2488,16 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 
 			// Display the 'Install' action link if the plugin is not yet available.
 			if ( ! $this->tgmpa->is_plugin_installed( $item['slug'] ) ) {
-				$actions['install'] = _x( 'Install %2$s', '%2$s = plugin name in screen reader markup', NRW_TEXT_DOMAIN );
+				$actions['install'] = _x( 'Install %2$s', '%2$s = plugin name in screen reader markup', LNX_TEXT_DOMAIN );
 			} else {
 				// Display the 'Update' action link if an update is available and WP complies with plugin minimum.
 				if ( false !== $this->tgmpa->does_plugin_have_update( $item['slug'] ) && $this->tgmpa->can_plugin_update( $item['slug'] ) ) {
-					$actions['update'] = _x( 'Update %2$s', '%2$s = plugin name in screen reader markup', NRW_TEXT_DOMAIN );
+					$actions['update'] = _x( 'Update %2$s', '%2$s = plugin name in screen reader markup', LNX_TEXT_DOMAIN );
 				}
 
 				// Display the 'Activate' action link, but only if the plugin meets the minimum version.
 				if ( $this->tgmpa->can_plugin_activate( $item['slug'] ) ) {
-					$actions['activate'] = _x( 'Activate %2$s', '%2$s = plugin name in screen reader markup', NRW_TEXT_DOMAIN );
+					$actions['activate'] = _x( 'Activate %2$s', '%2$s = plugin name in screen reader markup', LNX_TEXT_DOMAIN );
 				}
 			}
 
@@ -2567,7 +2567,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 				<tr class="plugin-update-tr">
 					<td colspan="', absint( $this->get_column_count() ), '" class="plugin-update colspanchange">
 						<div class="update-message">',
-							esc_html__( 'Upgrade message from the plugin author:', NRW_TEXT_DOMAIN ),
+							esc_html__( 'Upgrade message from the plugin author:', LNX_TEXT_DOMAIN ),
 							' <strong>', wp_kses_data( $item['upgrade_notice'] ), '</strong>
 						</div>
 					</td>
@@ -2600,16 +2600,16 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 
 			if ( 'update' !== $this->view_context && 'activate' !== $this->view_context ) {
 				if ( current_user_can( 'install_plugins' ) ) {
-					$actions['tgmpa-bulk-install'] = __( 'Install', NRW_TEXT_DOMAIN );
+					$actions['tgmpa-bulk-install'] = __( 'Install', LNX_TEXT_DOMAIN );
 				}
 			}
 
 			if ( 'install' !== $this->view_context ) {
 				if ( current_user_can( 'update_plugins' ) ) {
-					$actions['tgmpa-bulk-update'] = __( 'Update', NRW_TEXT_DOMAIN );
+					$actions['tgmpa-bulk-update'] = __( 'Update', LNX_TEXT_DOMAIN );
 				}
 				if ( current_user_can( 'activate_plugins' ) ) {
-					$actions['tgmpa-bulk-activate'] = __( 'Activate', NRW_TEXT_DOMAIN );
+					$actions['tgmpa-bulk-activate'] = __( 'Activate', LNX_TEXT_DOMAIN );
 				}
 			}
 
@@ -2640,9 +2640,9 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 				// Did user actually select any plugins to install/update ?
 				if ( empty( $_POST['plugin'] ) ) {
 					if ( 'install' === $install_type ) {
-						$message = __( 'No plugins were selected to be installed. No action taken.', NRW_TEXT_DOMAIN );
+						$message = __( 'No plugins were selected to be installed. No action taken.', LNX_TEXT_DOMAIN );
 					} else {
-						$message = __( 'No plugins were selected to be updated. No action taken.', NRW_TEXT_DOMAIN );
+						$message = __( 'No plugins were selected to be updated. No action taken.', LNX_TEXT_DOMAIN );
 					}
 
 					echo '<div id="message" class="error"><p>', esc_html( $message ), '</p></div>';
@@ -2678,9 +2678,9 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 				// No need to proceed further if we have no plugins to handle.
 				if ( empty( $plugins_to_install ) ) {
 					if ( 'install' === $install_type ) {
-						$message = __( 'No plugins are available to be installed at this time.', NRW_TEXT_DOMAIN );
+						$message = __( 'No plugins are available to be installed at this time.', LNX_TEXT_DOMAIN );
 					} else {
-						$message = __( 'No plugins are available to be updated at this time.', NRW_TEXT_DOMAIN );
+						$message = __( 'No plugins are available to be updated at this time.', LNX_TEXT_DOMAIN );
 					}
 
 					echo '<div id="message" class="error"><p>', esc_html( $message ), '</p></div>';
@@ -2785,7 +2785,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 
 				// Did user actually select any plugins to activate ?
 				if ( empty( $_POST['plugin'] ) ) {
-					echo '<div id="message" class="error"><p>', esc_html__( 'No plugins were selected to be activated. No action taken.', NRW_TEXT_DOMAIN ), '</p></div>';
+					echo '<div id="message" class="error"><p>', esc_html__( 'No plugins were selected to be activated. No action taken.', LNX_TEXT_DOMAIN ), '</p></div>';
 
 					return false;
 				}
@@ -2811,7 +2811,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 
 				// Return early if there are no plugins to activate.
 				if ( empty( $plugins_to_activate ) ) {
-					echo '<div id="message" class="error"><p>', esc_html__( 'No plugins are available to be activated at this time.', NRW_TEXT_DOMAIN ), '</p></div>';
+					echo '<div id="message" class="error"><p>', esc_html__( 'No plugins are available to be activated at this time.', LNX_TEXT_DOMAIN ), '</p></div>';
 
 					return false;
 				}
@@ -2825,11 +2825,11 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 					$count        = count( $plugin_names ); // Count so we can use _n function.
 					$plugin_names = array_map( array( 'TGMPA_Utils', 'wrap_in_strong' ), $plugin_names );
 					$last_plugin  = array_pop( $plugin_names ); // Pop off last name to prep for readability.
-					$imploded     = empty( $plugin_names ) ? $last_plugin : ( implode( ', ', $plugin_names ) . ' ' . esc_html_x( 'and', 'plugin A *and* plugin B', NRW_TEXT_DOMAIN ) . ' ' . $last_plugin );
+					$imploded     = empty( $plugin_names ) ? $last_plugin : ( implode( ', ', $plugin_names ) . ' ' . esc_html_x( 'and', 'plugin A *and* plugin B', LNX_TEXT_DOMAIN ) . ' ' . $last_plugin );
 
 					printf( // WPCS: xss ok.
 						'<div id="message" class="updated"><p>%1$s %2$s.</p></div>',
-						esc_html( _n( 'The following plugin was activated successfully:', 'The following plugins were activated successfully:', $count, NRW_TEXT_DOMAIN ) ),
+						esc_html( _n( 'The following plugin was activated successfully:', 'The following plugins were activated successfully:', $count, LNX_TEXT_DOMAIN ) ),
 						$imploded
 					);
 
@@ -2928,12 +2928,12 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 	 */
 	function tgmpa_load_bulk_installer() {
 		// Silently fail if 2.5+ is loaded *after* an older version.
-		if ( ! isset( $GLOBALS[NRW_TEXT_DOMAIN] ) ) {
+		if ( ! isset( $GLOBALS[LNX_TEXT_DOMAIN] ) ) {
 			return;
 		}
 
 		// Get TGMPA class instance.
-		$tgmpa_instance = call_user_func( array( get_class( $GLOBALS[NRW_TEXT_DOMAIN] ), 'get_instance' ) );
+		$tgmpa_instance = call_user_func( array( get_class( $GLOBALS[LNX_TEXT_DOMAIN] ), 'get_instance' ) );
 
 		if ( isset( $_GET['page'] ) && $tgmpa_instance->menu === $_GET['page'] ) {
 			if ( ! class_exists( 'Plugin_Upgrader', false ) ) {
@@ -3004,7 +3004,7 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 					 */
 					public function __construct( $skin = null ) {
 						// Get TGMPA class instance.
-						$this->tgmpa = call_user_func( array( get_class( $GLOBALS[NRW_TEXT_DOMAIN] ), 'get_instance' ) );
+						$this->tgmpa = call_user_func( array( get_class( $GLOBALS[LNX_TEXT_DOMAIN] ), 'get_instance' ) );
 
 						parent::__construct( $skin );
 
@@ -3025,8 +3025,8 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 					 * @since 2.2.0
 					 */
 					public function activate_strings() {
-						$this->strings['activation_failed']  = __( 'Plugin activation failed.', NRW_TEXT_DOMAIN );
-						$this->strings['activation_success'] = __( 'Plugin activated successfully.', NRW_TEXT_DOMAIN );
+						$this->strings['activation_failed']  = __( 'Plugin activation failed.', LNX_TEXT_DOMAIN );
+						$this->strings['activation_success'] = __( 'Plugin activated successfully.', LNX_TEXT_DOMAIN );
 					}
 
 					/**
@@ -3330,7 +3330,7 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 					 */
 					public function __construct( $args = array() ) {
 						// Get TGMPA class instance.
-						$this->tgmpa = call_user_func( array( get_class( $GLOBALS[NRW_TEXT_DOMAIN] ), 'get_instance' ) );
+						$this->tgmpa = call_user_func( array( get_class( $GLOBALS[LNX_TEXT_DOMAIN] ), 'get_instance' ) );
 
 						// Parse default and new args.
 						$defaults = array(
@@ -3359,23 +3359,23 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 					public function add_strings() {
 						if ( 'update' === $this->options['install_type'] ) {
 							parent::add_strings();
-							$this->upgrader->strings['skin_before_update_header'] = __( 'Updating Plugin %1$s (%2$d/%3$d)', NRW_TEXT_DOMAIN );
+							$this->upgrader->strings['skin_before_update_header'] = __( 'Updating Plugin %1$s (%2$d/%3$d)', LNX_TEXT_DOMAIN );
 						} else {
-							$this->upgrader->strings['skin_update_failed_error'] = __( 'An error occurred while installing %1$s: <strong>%2$s</strong>.', NRW_TEXT_DOMAIN );
-							$this->upgrader->strings['skin_update_failed']       = __( 'The installation of %1$s failed.', NRW_TEXT_DOMAIN );
+							$this->upgrader->strings['skin_update_failed_error'] = __( 'An error occurred while installing %1$s: <strong>%2$s</strong>.', LNX_TEXT_DOMAIN );
+							$this->upgrader->strings['skin_update_failed']       = __( 'The installation of %1$s failed.', LNX_TEXT_DOMAIN );
 
 							if ( $this->tgmpa->is_automatic ) {
 								// Automatic activation strings.
-								$this->upgrader->strings['skin_upgrade_start']        = __( 'The installation and activation process is starting. This process may take a while on some hosts, so please be patient.', NRW_TEXT_DOMAIN );
-								$this->upgrader->strings['skin_update_successful']    = __( '%1$s installed and activated successfully.', NRW_TEXT_DOMAIN ) . ' <a href="#" class="hide-if-no-js" onclick="%2$s"><span>' . esc_html__( 'Show Details', NRW_TEXT_DOMAIN ) . '</span><span class="hidden">' . esc_html__( 'Hide Details', NRW_TEXT_DOMAIN ) . '</span>.</a>';
-								$this->upgrader->strings['skin_upgrade_end']          = __( 'All installations and activations have been completed.', NRW_TEXT_DOMAIN );
-								$this->upgrader->strings['skin_before_update_header'] = __( 'Installing and Activating Plugin %1$s (%2$d/%3$d)', NRW_TEXT_DOMAIN );
+								$this->upgrader->strings['skin_upgrade_start']        = __( 'The installation and activation process is starting. This process may take a while on some hosts, so please be patient.', LNX_TEXT_DOMAIN );
+								$this->upgrader->strings['skin_update_successful']    = __( '%1$s installed and activated successfully.', LNX_TEXT_DOMAIN ) . ' <a href="#" class="hide-if-no-js" onclick="%2$s"><span>' . esc_html__( 'Show Details', LNX_TEXT_DOMAIN ) . '</span><span class="hidden">' . esc_html__( 'Hide Details', LNX_TEXT_DOMAIN ) . '</span>.</a>';
+								$this->upgrader->strings['skin_upgrade_end']          = __( 'All installations and activations have been completed.', LNX_TEXT_DOMAIN );
+								$this->upgrader->strings['skin_before_update_header'] = __( 'Installing and Activating Plugin %1$s (%2$d/%3$d)', LNX_TEXT_DOMAIN );
 							} else {
 								// Default installation strings.
-								$this->upgrader->strings['skin_upgrade_start']        = __( 'The installation process is starting. This process may take a while on some hosts, so please be patient.', NRW_TEXT_DOMAIN );
-								$this->upgrader->strings['skin_update_successful']    = esc_html__( '%1$s installed successfully.', NRW_TEXT_DOMAIN ) . ' <a href="#" class="hide-if-no-js" onclick="%2$s"><span>' . esc_html__( 'Show Details', NRW_TEXT_DOMAIN ) . '</span><span class="hidden">' . esc_html__( 'Hide Details', NRW_TEXT_DOMAIN ) . '</span>.</a>';
-								$this->upgrader->strings['skin_upgrade_end']          = __( 'All installations have been completed.', NRW_TEXT_DOMAIN );
-								$this->upgrader->strings['skin_before_update_header'] = __( 'Installing Plugin %1$s (%2$d/%3$d)', NRW_TEXT_DOMAIN );
+								$this->upgrader->strings['skin_upgrade_start']        = __( 'The installation process is starting. This process may take a while on some hosts, so please be patient.', LNX_TEXT_DOMAIN );
+								$this->upgrader->strings['skin_update_successful']    = esc_html__( '%1$s installed successfully.', LNX_TEXT_DOMAIN ) . ' <a href="#" class="hide-if-no-js" onclick="%2$s"><span>' . esc_html__( 'Show Details', LNX_TEXT_DOMAIN ) . '</span><span class="hidden">' . esc_html__( 'Hide Details', LNX_TEXT_DOMAIN ) . '</span>.</a>';
+								$this->upgrader->strings['skin_upgrade_end']          = __( 'All installations have been completed.', LNX_TEXT_DOMAIN );
+								$this->upgrader->strings['skin_before_update_header'] = __( 'Installing Plugin %1$s (%2$d/%3$d)', LNX_TEXT_DOMAIN );
 							}
 						}
 					}
@@ -3435,7 +3435,7 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 							echo '<style type="text/css">#adminmenu .wp-submenu li.current { display: none !important; }</style>';
 							$update_actions['dashboard'] = sprintf(
 								esc_html( $this->tgmpa->strings['complete'] ),
-								'<a href="' . esc_url( self_admin_url() ) . '">' . esc_html__( 'Return to the Dashboard', NRW_TEXT_DOMAIN ) . '</a>'
+								'<a href="' . esc_url( self_admin_url() ) . '">' . esc_html__( 'Return to the Dashboard', LNX_TEXT_DOMAIN ) . '</a>'
 							);
 						} else {
 							$update_actions['tgmpa_page'] = '<a href="' . esc_url( $this->tgmpa->get_tgmpa_url() ) . '" target="_parent">' . esc_html( $this->tgmpa->strings['return'] ) . '</a>';

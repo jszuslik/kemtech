@@ -1,0 +1,39 @@
+.navbar-brand {
+  height: auto;
+  padding: 0;
+}
+.navbar-brand h1 {
+  margin: 0;
+}
+h1 span {
+  font-size: 0.6em;
+}
+.social {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.social a {
+  padding: 0 30px;
+}
+.social a .fa {
+  font-size: 1.7em;
+}
+.social a span {
+  font-weight: 700;
+  font-style: italic;
+  font-size: 1.7em;
+}
+#menu-primary {
+  padding: 5px 0;
+}
+#menu-primary a {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.35em;
+  letter-spacing: 0.07em;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.navbar {
+  border-bottom: 10px;
+}

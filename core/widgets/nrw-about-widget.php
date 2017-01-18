@@ -2,12 +2,12 @@
 class Nrw_Widget_About_Me extends WP_Widget {
     public function __construct() {
         $widget_ops = array('classname' => 'widget_about_me');
-        parent::__construct('widget_about_me', esc_html__('NRW: About Me Widget', NRW_TEXT_DOMAIN), $widget_ops);
+        parent::__construct('widget_about_me', esc_html__('NRW: About Me Widget', LNX_TEXT_DOMAIN), $widget_ops);
     }
 
     public function widget($args, $instance)
     {
-        $title = apply_filters('widget_title', empty($instance['title']) ? esc_html__('About Me', NRW_TEXT_DOMAIN) : $instance['title'], $instance, $this->id_base);
+        $title = apply_filters('widget_title', empty($instance['title']) ? esc_html__('About Me', LNX_TEXT_DOMAIN) : $instance['title'], $instance, $this->id_base);
         echo wp_kses_post($args['before_widget']);
         if ( $title ) echo wp_kses_post( $args['before_title'] . $title . $args['after_title'] ); ?>
         <div class="about-widget widget-content">
@@ -68,7 +68,7 @@ class Nrw_Widget_About_Me extends WP_Widget {
         </p><?php
     }
 }
-add_action('widgets_init', 'nrw_about_me_init');
-function nrw_about_me_init() {
+add_action('widgets_init', 'lnx_about_me_init');
+function lnx_about_me_init() {
     register_widget('Nrw_Widget_About_Me');
 }

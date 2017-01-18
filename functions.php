@@ -1,87 +1,115 @@
 <?php
-define('NRW_LIBS_URI', get_template_directory_uri() . '/libs/');
-define('NRW_CORE_PATH', get_template_directory() . '/core/');
-define('NRW_CORE_URI', get_template_directory_uri() . '/core/');
-define('NRW_ASSETS_URI', get_template_directory_uri() . '/assets/');
-define('NRW_CORE_CLASSES', NRW_CORE_PATH . 'classes/');
-define('NRW_CORE_FUNCTIONS', NRW_CORE_PATH . 'functions/');
-define('NRW_CORE_WIDGETS', NRW_CORE_PATH . 'widgets/');
-define('NRW_TEXT_DOMAIN', 'nrw');
+define('LNX_LIBS_URI', get_template_directory_uri() . '/libs/');
+define('LNX_CORE_PATH', get_template_directory() . '/core/');
+define('LNX_CORE_URI', get_template_directory_uri() . '/core/');
+define('LNX_ASSETS_URI', get_template_directory_uri() . '/assets/');
+define('LNX_CORE_CLASSES', LNX_CORE_PATH . 'classes/');
+define('LNX_CORE_FUNCTIONS', LNX_CORE_PATH . 'functions/');
+define('LNX_CORE_WIDGETS', LNX_CORE_PATH . 'widgets/');
+define('LNX_TEXT_DOMAIN', 'kemtech');
 
 // Set content width
 if (!isset( $content_width ) ) { $content_width = 1170; }
 
 // Theme setup
-add_action('after_setup_theme', 'nrw_setup');
-function nrw_setup() {
-    load_theme_textdomain( NRW_TEXT_DOMAIN, get_template_directory() . '/languages' );
+add_action('after_setup_theme', 'lnx_setup');
+function lnx_setup() {
+    load_theme_textdomain( LNX_TEXT_DOMAIN, get_template_directory() . '/languages' );
     add_theme_support('woocommerce');
     add_theme_support('title-tag');
     add_theme_support('automatic-feed-links');
     add_theme_support('post-thumbnails');
-    add_image_size(NRW_TEXT_DOMAIN . '-fullwidth', 1170, 0, true);
+    add_image_size(LNX_TEXT_DOMAIN . '-fullwidth', 1170, 0, true);
     register_nav_menus(
         array(
-            'primary' => esc_html__('Primary Menu', NRW_TEXT_DOMAIN),
-            'topbar'  => esc_html__('Topbar Menu', NRW_TEXT_DOMAIN)
+            'primary' => esc_html__('Primary Menu', LNX_TEXT_DOMAIN),
+            'topbar'  => esc_html__('Topbar Menu', LNX_TEXT_DOMAIN)
         )
     );
     add_theme_support('post-formats', array('video', 'audio', 'gallery'));
 }
 
 // Register & Enqueue Styles and Scripts
-add_action('wp_enqueue_scripts', 'nrw_load_scripts');
-function nrw_load_scripts() {
+add_action('wp_enqueue_scripts', 'lnx_load_scripts');
+function lnx_load_scripts() {
 
     //CSS
-    wp_enqueue_style('nrw_bootstrap', NRW_LIBS_URI . 'bootstrap/css.bootstrap.min.css');
-    wp_enqueue_style('nrw_font-awesome', NRW_LIBS_URI . 'font-awesome/css/font-awesome.min.css');
-    wp_enqueue_style('nrw_chosen-min', NRW_LIBS_URI . 'chosen/chosen.min.css');
-    wp_enqueue_style('nrw_owl-carousel', NRW_LIBS_URI . 'owl/owl.carousel.css');
-    wp_enqueue_style('nrw_commerce', NRW_ASSETS_URI . 'css/woocommerce.css');
-    wp_enqueue_style('nrw_theme_style', get_stylesheet_directory_uri() . '/style.css');
+    wp_enqueue_style('lnx_bootstrap', LNX_LIBS_URI . 'bootstrap/css/bootstrap.min.css');
+    wp_enqueue_style('lnx_font-awesome', LNX_LIBS_URI . 'font-awesome/css/font-awesome.min.css');
+    wp_enqueue_style('lnx_pt_sans', 'https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i');
+    wp_enqueue_style('lnx_theme_style', get_stylesheet_directory_uri() . '/style.css');
 
     //JS
-    wp_enqueue_script('nrw_fitvids', NRW_LIBS_URI . 'fitvids/fitvids.js', array('jquery'), false, true);
-    wp_enqueue_script('nrw_owl-carousel', NRW_LIBS_URI . 'owl/owl.carousel.min.js', array(), false, true);
-    wp_enqueue_script('nrw_masonry', NRW_LIBS_URI . 'masonry/masonry.min.js', array(), false, true);
-    wp_enqueue_script('nrw_chosen', NRW_LIBS_URI . 'chosen/chosen.jquery.min.js', array(), false, true);
-    wp_enqueue_script('nrw_scripts', NRW_ASSETS_URI . 'js/nrw-scripts.js', array(), false, true);
+    wp_enqueue_script('lnx_bootstrap_scripts', LNX_LIBS_URI . 'bootstrap/js/bootstrap.min.js', array('jquery'), false, true);
+    wp_enqueue_script('lnx_scripts', LNX_ASSETS_URI . 'js/nrw-scripts.js', array(), false, true);
 
     if ( is_singular() && get_option( 'thread_comments' ) ) {
         wp_enqueue_script('comment-reply');
     }
 }
 
-function nrw_require_file( $path ) {
+function lnx_require_file( $path ) {
     if ( file_exists($path) ) {
         require $path;
     }
 }
 
 // Require core files
-nrw_require_file( get_template_directory() . '/core/init.php' );
+lnx_require_file( get_template_directory() . '/core/init.php' );
 
 // Include the TGM_Plugin_Activation class
-add_action('tgmpa_register', 'nrw_register_required_plugins');
+add_action('tgmpa_register', 'lnx_register_required_plugins');
 
-function nrw_register_required_plugins() {
+function lnx_register_required_plugins() {
     $plugins = array(
         // Install from external source or directory
         array(
-            'name'     				=> esc_html__('', NRW_TEXT_DOMAIN),
-            'slug'     				=> '',
-            'source' 			    => esc_url(''),
+            'name'     				=> esc_html__('Backup Buddy', LNX_TEXT_DOMAIN),
+            'slug'     				=> 'backupbuddy',
+            'source' 			    => esc_url(get_template_directory() . '/plugins/backupbuddy-7.2.2.0.zip'),
             'force_activation' 		=> false,
-            'required' 				=> false,
+            'required' 				=> true,
             'force_deactivation' 	=> false,
-            'version' 				=> ''
+            'version' 				=> '7.2.2.0'
+        ),
+        array(
+            'name'     				=> esc_html__('Formidable Pro', LNX_TEXT_DOMAIN),
+            'slug'     				=> 'formidable',
+            'source' 			    => esc_url(get_template_directory() . '/plugins/formidable-pro-2.02.13.zip'),
+            'force_activation' 		=> false,
+            'required' 				=> true,
+            'force_deactivation' 	=> false,
+            'version' 				=> '2.02.13'
         ),
         // Install from WordPress.org
         array(
-            'name'     				=> '',
-            'slug'     				=> '',
-            'required' 				=> false,
+            'name'     				=> 'Wordfence Security',
+            'slug'     				=> 'wordfence',
+            'required' 				=> true,
+            'force_activation' 		=> false,
+            'force_deactivation' 	=> false,
+            'external_url' 			=> ''
+        ),
+        array(
+            'name'     				=> 'Disable Comments',
+            'slug'     				=> 'disable-comments',
+            'required' 				=> true,
+            'force_activation' 		=> false,
+            'force_deactivation' 	=> false,
+            'external_url' 			=> ''
+        ),
+        array(
+            'name'     				=> 'All in One SEO Pack',
+            'slug'     				=> 'all-in-one-seo-pack',
+            'required' 				=> true,
+            'force_activation' 		=> false,
+            'force_deactivation' 	=> false,
+            'external_url' 			=> ''
+        ),
+        array(
+            'name'     				=> 'WP Statistics',
+            'slug'     				=> 'wp-statistics',
+            'required' 				=> true,
             'force_activation' 		=> false,
             'force_deactivation' 	=> false,
             'external_url' 			=> ''
@@ -105,48 +133,48 @@ function nrw_register_required_plugins() {
 /**
  * Blog layout settings
  */
-function nrw_blog_config()
+function lnx_blog_config()
 {
     if ( is_home() )
     {
-        $nrw_blog_layout       = get_theme_mod('nrw_blog_layout', 'standard');
-        $nrw_disable_sidebar   = get_theme_mod('nrw_hompage_disable_sidebar');
+        $lnx_blog_layout       = get_theme_mod('lnx_blog_layout', 'standard');
+        $lnx_disable_sidebar   = get_theme_mod('lnx_hompage_disable_sidebar');
 
         if ( isset($_REQUEST['layout']) && trim($_REQUEST['layout']) != '' ) {
-            $nrw_blog_layout = trim($_REQUEST['layout']);
+            $lnx_blog_layout = trim($_REQUEST['layout']);
         }
     }
     elseif ( is_single() )
     {
-        $nrw_disable_sidebar   = get_theme_mod('nrw_single_post_disable_sidebar');
-        $nrw_blog_layout       = null;
+        $lnx_disable_sidebar   = get_theme_mod('lnx_single_post_disable_sidebar');
+        $lnx_blog_layout       = null;
     }
     else
     {
-        $nrw_blog_layout       = get_theme_mod('nrw_archive_layout', 'standard');
-        $nrw_disable_sidebar   = get_theme_mod('nrw_archive_disable_sidebar');
+        $lnx_blog_layout       = get_theme_mod('lnx_archive_layout', 'standard');
+        $lnx_disable_sidebar   = get_theme_mod('lnx_archive_disable_sidebar');
     }
 
     if ( isset($_REQUEST['sidebar']) && trim($_REQUEST['sidebar']) == 'no' ) {
-        $nrw_disable_sidebar = true;
+        $lnx_disable_sidebar = true;
     }
 
-    if ( $nrw_blog_layout == '3col_grid' ) $nrw_disable_sidebar = true;
+    if ( $lnx_blog_layout == '3col_grid' ) $lnx_disable_sidebar = true;
 
-    if ( $nrw_disable_sidebar ) {
-        $nrw_blog_column = 12;
-        $nrw_blog_column_sm  = 12;
+    if ( $lnx_disable_sidebar ) {
+        $lnx_blog_column = 12;
+        $lnx_blog_column_sm  = 12;
     } else {
-        $nrw_blog_column  = 9;
-        $nrw_blog_column_sm = 8;
+        $lnx_blog_column  = 9;
+        $lnx_blog_column_sm = 8;
     }
 
-    $nrw_blog = array();
-    $nrw_blog['layout']            = $nrw_blog_layout;
-    $nrw_blog['disable_sidebar']   = $nrw_disable_sidebar;
-    $nrw_blog['column']            = $nrw_blog_column;
-    $nrw_blog['column_sm']         = $nrw_blog_column_sm;
+    $lnx_blog = array();
+    $lnx_blog['layout']            = $lnx_blog_layout;
+    $lnx_blog['disable_sidebar']   = $lnx_disable_sidebar;
+    $lnx_blog['column']            = $lnx_blog_column;
+    $lnx_blog['column_sm']         = $lnx_blog_column_sm;
 
 
-    return $nrw_blog;
+    return $lnx_blog;
 }

@@ -11,46 +11,53 @@
 <div id="wrapper">
     <div class="topbar">
         <div class="container">
-            <?php
-            wp_nav_menu( array (
-                'container'         => false,
-                'theme_location'    => 'topbar',
-                'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-                'depth'             => 2,
-                'walker'            => new wp_bootstrap_navwalker(),
-                'menu_class'        => 'topbar-menu pull-left'
-            ) );
-            ?>
             <div class="social pull-right">
-                <?php if(get_theme_mod('nrw_facebook')) : ?><a href="<?php echo esc_url( get_theme_mod('nrw_facebook') ); ?>" target="_blank"><i class="fa fa-facebook"></i></a><?php endif; ?>
-                <?php if(get_theme_mod('nrw_twitter')) : ?><a href="<?php echo esc_url( get_theme_mod('nrw_twitter') ); ?>" target="_blank"><i class="fa fa-twitter"></i></a><?php endif; ?>
-                <?php if(get_theme_mod('nrw_instagram')) : ?><a href="<?php echo esc_url( get_theme_mod('nrw_instagram') ); ?>" target="_blank"><i class="fa fa-instagram"></i></a><?php endif; ?>
-                <?php if(get_theme_mod('nrw_pinterest')) : ?><a href="<?php echo esc_url( get_theme_mod('nrw_pinterest') ); ?>" target="_blank"><i class="fa fa-pinterest"></i></a><?php endif; ?>
-                <?php if(get_theme_mod('nrw_bloglovin')) : ?><a href="<?php echo esc_url( get_theme_mod('nrw_bloglovin') ); ?>" target="_blank"><i class="fa fa-heart"></i></a><?php endif; ?>
-                <?php if(get_theme_mod('nrw_google')) : ?><a href="<?php echo esc_url( get_theme_mod('nrw_google') ); ?>" target="_blank"><i class="fa fa-google-plus"></i></a><?php endif; ?>
-                <?php if(get_theme_mod('nrw_tumblr')) : ?><a href="<?php echo esc_url( get_theme_mod('nrw_tumblr') ); ?>" target="_blank"><i class="fa fa-tumblr"></i></a><?php endif; ?>
-                <?php if(get_theme_mod('nrw_youtube')) : ?><a href="<?php echo esc_url( get_theme_mod('nrw_youtube') ); ?>" target="_blank"><i class="fa fa-youtube-play"></i></a><?php endif; ?>
-                <?php if(get_theme_mod('nrw_dribbble')) : ?><a href="<?php echo esc_url( get_theme_mod('nrw_dribbble') ); ?>" target="_blank"><i class="fa fa-dribbble"></i></a><?php endif; ?>
-                <?php if(get_theme_mod('nrw_soundcloud')) : ?><a href="<?php echo esc_url( get_theme_mod('nrw_soundcloud') ); ?>" target="_blank"><i class="fa fa-soundcloud"></i></a><?php endif; ?>
-                <?php if(get_theme_mod('nrw_vimeo')) : ?><a href="<?php echo esc_url( get_theme_mod('nrw_vimeo') ); ?>" target="_blank"><i class="fa fa-vimeo-square"></i></a><?php endif; ?>
-                <?php if(get_theme_mod('nrw_linkedin')) : ?><a href="<?php echo esc_url( get_theme_mod('nrw_linkedin') ); ?>" target="_blank"><i class="fa fa-linkedin"></i></a><?php endif; ?>
+                <?php if(get_theme_mod('lnx_company_info_phone')) : ?>
+                    <?php
+                        $ph_number_unsan = get_theme_mod('lnx_company_info_phone');
+                        $ph_number_print = preg_replace('#\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})#', '\1.\2.\3', $ph_number_unsan);
+                        $ph_number_link = preg_replace('#\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})#', '\1\2\3', $ph_number_unsan);
+                    ?>
+                    <a href="tel:+1<?php echo $ph_number_link; ?>" target="_blank"><span><?php echo $ph_number_print; ?></span></a>
+                <?php endif; ?>
+                <?php if(get_theme_mod('lnx_linkedin')) : ?><a href="<?php echo esc_url( get_theme_mod('lnx_linkedin') ); ?>" target="_blank"><i class="fa fa-linkedin-square"></i></a><?php endif; ?>
+                <?php if(get_theme_mod('lnx_youtube')) : ?><a href="<?php echo esc_url( get_theme_mod('lnx_youtube') ); ?>" target="_blank"><i class="fa fa-youtube-play"></i></a><?php endif; ?>
+                <?php if(get_theme_mod('lnx_facebook')) : ?><a href="<?php echo esc_url( get_theme_mod('lnx_facebook') ); ?>" target="_blank"><i class="fa fa-facebook"></i></a><?php endif; ?>
+                <?php if(get_theme_mod('lnx_twitter')) : ?><a href="<?php echo esc_url( get_theme_mod('lnx_twitter') ); ?>" target="_blank"><i class="fa fa-twitter"></i></a><?php endif; ?>
+                <?php if(get_theme_mod('lnx_instagram')) : ?><a href="<?php echo esc_url( get_theme_mod('lnx_instagram') ); ?>" target="_blank"><i class="fa fa-instagram"></i></a><?php endif; ?>
+                <?php if(get_theme_mod('lnx_pinterest')) : ?><a href="<?php echo esc_url( get_theme_mod('lnx_pinterest') ); ?>" target="_blank"><i class="fa fa-pinterest"></i></a><?php endif; ?>
+                <?php if(get_theme_mod('lnx_bloglovin')) : ?><a href="<?php echo esc_url( get_theme_mod('lnx_bloglovin') ); ?>" target="_blank"><i class="fa fa-heart"></i></a><?php endif; ?>
+                <?php if(get_theme_mod('lnx_google')) : ?><a href="<?php echo esc_url( get_theme_mod('lnx_google') ); ?>" target="_blank"><i class="fa fa-google-plus"></i></a><?php endif; ?>
+                <?php if(get_theme_mod('lnx_tumblr')) : ?><a href="<?php echo esc_url( get_theme_mod('lnx_tumblr') ); ?>" target="_blank"><i class="fa fa-tumblr"></i></a><?php endif; ?>
+                <?php if(get_theme_mod('lnx_dribbble')) : ?><a href="<?php echo esc_url( get_theme_mod('lnx_dribbble') ); ?>" target="_blank"><i class="fa fa-dribbble"></i></a><?php endif; ?>
+                <?php if(get_theme_mod('lnx_soundcloud')) : ?><a href="<?php echo esc_url( get_theme_mod('lnx_soundcloud') ); ?>" target="_blank"><i class="fa fa-soundcloud"></i></a><?php endif; ?>
+                <?php if(get_theme_mod('lnx_vimeo')) : ?><a href="<?php echo esc_url( get_theme_mod('lnx_vimeo') ); ?>" target="_blank"><i class="fa fa-vimeo-square"></i></a><?php endif; ?>
             </div>
         </div>
     </div>
 </div>
-<div id="nav-wrapper">
+<div class="navbar navbar-defualt">
     <div class="container">
-        <a href="javascript:void(0)" class="toggle-mainmenu"><i class="fa fa-bars"></i></a>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/"><h1>KEM TECH<br><span>INDUSTRIES, INC.</span></h1></a>
+        </div>
         <?php
         wp_nav_menu( array (
-            'container' => false,
-            'theme_location' => 'primary',
-            'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
-            'depth' => 10,
-            'walker' => new wp_bootstrap_navwalker(),
-            'menu_class' => 'azmenu',
-            'menu_id' => 'menu-topbar-menu'
-        ) );
+                'menu' => 'primary',
+                'theme_location' => 'primary',
+                'depth' => 2,
+                'container' => 'div',
+                'container_class' => 'navbar-collapse collapse navbar-responsive-collapse',
+                'container_id' => 'mobile-collapse',
+                'menu_class' => 'nav navbar-nav navbar-right',
+                'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
+                'walker' => new wp_bootstrap_navwalker())
+        );
         ?>
     </div>
 </div>

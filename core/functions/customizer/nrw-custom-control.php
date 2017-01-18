@@ -1,6 +1,6 @@
 <?php
-add_action('customize_register', 'nrw_customize_register');
-function nrw_customize_register($wp_customize)
+add_action('customize_register', 'lnx_customize_register');
+function lnx_customize_register($wp_customize)
 {
 	class Customize_Number_Control extends WP_Customize_Control
     {
@@ -45,7 +45,7 @@ if (class_exists('WP_Customize_Control')) {
                 array(
                     'name'              => '_customize-dropdown-categories-' . $this->id,
                     'echo'              => 0,
-                    'show_option_none'  => esc_html__( '&mdash; Select &mdash;', NRW_TEXT_DOMAIN ),
+                    'show_option_none'  => esc_html__( '&mdash; Select &mdash;', LNX_TEXT_DOMAIN ),
                     'option_none_value' => '0',
                     'selected'          => $this->value(),
                 )

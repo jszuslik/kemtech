@@ -3,8 +3,8 @@ class Nrw_Widget_Latest_Posts_Widget extends WP_Widget
 {
     function __construct()
     {
-        $widget_ops = array( 'classname' => 'nrw_latest_posts_widget', 'description' => esc_html__('A widget that displays your latest posts from all categories or a certain', NRW_TEXT_DOMAIN) );
-        parent::__construct( 'nrw_latest_posts_widget', esc_html__('NRW: Latest Posts', NRW_TEXT_DOMAIN), $widget_ops );
+        $widget_ops = array( 'classname' => 'lnx_latest_posts_widget', 'description' => esc_html__('A widget that displays your latest posts from all categories or a certain', LNX_TEXT_DOMAIN) );
+        parent::__construct( 'lnx_latest_posts_widget', esc_html__('NRW: Latest Posts', LNX_TEXT_DOMAIN), $widget_ops );
     }
 
     function widget( $args, $instance )
@@ -27,7 +27,7 @@ class Nrw_Widget_Latest_Posts_Widget extends WP_Widget
                     <div class="post-image">
                         <a href="<?php the_permalink(); ?>" rel="bookmark">
                             <?php
-                            $image_featured = nrw_resize_image( get_post_meta( get_the_ID() , '_thumbnail_id', true ) , null, 100, 100, true, true );
+                            $image_featured = lnx_resize_image( get_post_meta( get_the_ID() , '_thumbnail_id', true ) , null, 100, 100, true, true );
                             $image_featured = $image_featured['url'];
                             ?>
                             <img src="<?php echo esc_url($image_featured); ?>" alt="<?php the_title(); ?>" />
@@ -57,10 +57,10 @@ class Nrw_Widget_Latest_Posts_Widget extends WP_Widget
 
     function form( $instance )
     {
-        $defaults = array( 'title' => esc_html__('Latest Posts', NRW_TEXT_DOMAIN), 'number' => 5, 'categories' => '');
+        $defaults = array( 'title' => esc_html__('Latest Posts', LNX_TEXT_DOMAIN), 'number' => 5, 'categories' => '');
         $instance = wp_parse_args( (array) $instance, $defaults ); ?>
         <p>
-            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php esc_html_e('Title:', NRW_TEXT_DOMAIN); ?></label>
+            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php esc_html_e('Title:', LNX_TEXT_DOMAIN); ?></label>
             <input  type="text" class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo $instance['title']; ?>"  />
         </p>
         <p>
@@ -74,14 +74,14 @@ class Nrw_Widget_Latest_Posts_Widget extends WP_Widget
             </select>
         </p>
         <p>
-            <label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php esc_html_e('Number of posts to show:', NRW_TEXT_DOMAIN); ?></label>
+            <label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php esc_html_e('Number of posts to show:', LNX_TEXT_DOMAIN); ?></label>
             <input  type="text" class="widefat" id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" value="<?php echo $instance['number']; ?>" size="3" />
         </p>
         <?php
     }
 }
 
-function nrw_latest_posts_init() {
+function lnx_latest_posts_init() {
     register_widget( 'Nrw_Widget_Latest_Posts_Widget' );
 }
-add_action( 'widgets_init', 'nrw_latest_posts_init' );
+add_action( 'widgets_init', 'lnx_latest_posts_init' );

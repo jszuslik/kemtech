@@ -516,96 +516,96 @@ msgstr ""
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: ../core/functions/customizer/nrw_custom_controll.php:48
+#: ../core/functions/customizer/lnx_custom_controll.php:48
 msgid "&mdash; Select &mdash;"
 msgstr ""
 
-#: ../core/widgets/nrw_categories_images.php:8
+#: ../core/widgets/lnx_categories_images.php:8
 msgid "Categories Images Widget"
 msgstr ""
 
-#: ../core/widgets/nrw_categories_images.php:62
+#: ../core/widgets/lnx_categories_images.php:62
 msgid "Categories"
 msgstr ""
 
-#: ../core/widgets/nrw_categories_images.php:71 ..
-#: /core/widgets/nrw_latest_posts_widget.php:63
+#: ../core/widgets/lnx_categories_images.php:71 ..
+#: /core/widgets/lnx_latest_posts_widget.php:63
 msgid "Title:"
 msgstr ""
 
-#: ../core/widgets/nrw_categories_images.php:75
+#: ../core/widgets/lnx_categories_images.php:75
 msgid "Limit:"
 msgstr ""
 
-#: ../core/widgets/nrw_categories_images.php:79
+#: ../core/widgets/lnx_categories_images.php:79
 msgid "Hide Empty"
 msgstr ""
 
-#: ../core/widgets/nrw_categories_images.php:83
+#: ../core/widgets/lnx_categories_images.php:83
 msgid "Parent"
 msgstr ""
 
-#: ../core/widgets/nrw_categories_images.php:88
+#: ../core/widgets/lnx_categories_images.php:88
 msgid "Order By"
 msgstr ""
 
-#: ../core/widgets/nrw_categories_images.php:90
+#: ../core/widgets/lnx_categories_images.php:90
 msgid "ID"
 msgstr ""
 
-#: ../core/widgets/nrw_categories_images.php:91
+#: ../core/widgets/lnx_categories_images.php:91
 msgid "Name"
 msgstr ""
 
-#: ../core/widgets/nrw_categories_images.php:92
+#: ../core/widgets/lnx_categories_images.php:92
 msgid "Count"
 msgstr ""
 
-#: ../core/widgets/nrw_categories_images.php:94
+#: ../core/widgets/lnx_categories_images.php:94
 msgid ""
 "Sort categories alphabetically, by unique Category ID, or by the count of "
 "posts in that Category"
 msgstr ""
 
-#: ../core/widgets/nrw_categories_images.php:97
+#: ../core/widgets/lnx_categories_images.php:97
 msgid "Order"
 msgstr ""
 
-#: ../core/widgets/nrw_categories_images.php:99
+#: ../core/widgets/lnx_categories_images.php:99
 msgid "ASC"
 msgstr ""
 
-#: ../core/widgets/nrw_categories_images.php:100
+#: ../core/widgets/lnx_categories_images.php:100
 msgid "DESC"
 msgstr ""
 
-#: ../core/widgets/nrw_categories_images.php:102
+#: ../core/widgets/lnx_categories_images.php:102
 msgid ""
 "Sort order for categories (either ascending or descending). The default is "
 "ascending"
 msgstr ""
 
-#: ../core/widgets/nrw_about_widget.php:7
+#: ../core/widgets/lnx_about_widget.php:7
 msgid "NRW: About Me Widget"
 msgstr ""
 
-#: ../core/widgets/nrw_about_widget.php:12
+#: ../core/widgets/lnx_about_widget.php:12
 msgid "About Me"
 msgstr ""
 
-#: ../core/widgets/nrw_latest_posts_widget.php:6
+#: ../core/widgets/lnx_latest_posts_widget.php:6
 msgid "A widget that displays your latest posts from all categories or a certain"
 msgstr ""
 
-#: ../core/widgets/nrw_latest_posts_widget.php:7
+#: ../core/widgets/lnx_latest_posts_widget.php:7
 msgid "NRW: Latest Posts"
 msgstr ""
 
-#: ../core/widgets/nrw_latest_posts_widget.php:60
+#: ../core/widgets/lnx_latest_posts_widget.php:60
 msgid "Latest Posts"
 msgstr ""
 
-#: ../core/widgets/nrw_latest_posts_widget.php:77
+#: ../core/widgets/lnx_latest_posts_widget.php:77
 msgid "Number of posts to show:"
 msgstr ""
 

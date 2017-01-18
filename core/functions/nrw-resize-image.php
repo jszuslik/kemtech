@@ -10,7 +10,7 @@
  * @since 1.0
  * @return array
  */
-function nrw_resize_image( $attach_id = null, $img_url = null, $width, $height, $crop = false, $place_hold = true )
+function lnx_resize_image( $attach_id = null, $img_url = null, $width, $height, $crop = false, $place_hold = true )
 {
     // this is an attachment, so we have the ID
     $image_src = array();

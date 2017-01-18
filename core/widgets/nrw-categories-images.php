@@ -2,11 +2,11 @@
 class Nrw_Categories_Images extends WP_Widget {
     public function __construct() {
         $widget_ops = array(
-            'classname'   => 'nrw_categories_widget',
-            'description' => esc_html__('Categories Images Widget', NRW_TEXT_DOMAIN)
+            'classname'   => 'lnx_categories_widget',
+            'description' => esc_html__('Categories Images Widget', LNX_TEXT_DOMAIN)
         );
 
-        parent::__construct( 'nrw_categories_images', 'NRW: Categories Images Widget', $widget_ops );
+        parent::__construct( 'lnx_categories_images', 'NRW: Categories Images Widget', $widget_ops );
     }
 
     public function widget($args, $instance) {
@@ -54,7 +54,7 @@ class Nrw_Categories_Images extends WP_Widget {
     }
 
     public function form( $instance ) {
-        $title              = empty($instance['title']) ? esc_html__('Categories', NRW_TEXT_DOMAIN) : $instance['title'];
+        $title              = empty($instance['title']) ? esc_html__('Categories', LNX_TEXT_DOMAIN) : $instance['title'];
         $categories_style   = ( empty($instance['categories_style']) || !isset($instance['categories_style']) ) ? 'Normal' : $instance['categories_style'];
         $limit              = ( !isset($instance['limit']) || (int)$instance['limit'] < 1 ) ? 3 : (int)$instance['limit'];
         $hide_empty         = isset( $instance['hide_empty'] ) ? true : false;
@@ -63,44 +63,44 @@ class Nrw_Categories_Images extends WP_Widget {
         $orderby            = isset( $instance['orderby'] ) ? $instance['orderby'] : 'name';
         ?>
         <p>
-            <label for="<?php echo esc_attr($this->get_field_name( 'title' )); ?>"><?php esc_html_e( 'Title:', NRW_TEXT_DOMAIN ); ?></label>
+            <label for="<?php echo esc_attr($this->get_field_name( 'title' )); ?>"><?php esc_html_e( 'Title:', LNX_TEXT_DOMAIN ); ?></label>
             <input class="widefat" id="<?php echo esc_attr($this->get_field_id( 'title' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'title' )); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
         </p>
         <p>
-            <label for="<?php echo esc_attr($this->get_field_name( 'limit' )); ?>"><?php esc_html_e( 'Limit:', NRW_TEXT_DOMAIN ); ?></label>
+            <label for="<?php echo esc_attr($this->get_field_name( 'limit' )); ?>"><?php esc_html_e( 'Limit:', LNX_TEXT_DOMAIN ); ?></label>
             <input class="widefat" id="<?php echo esc_attr($this->get_field_id( 'limit' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'limit' )); ?>" type="text" value="<?php echo esc_attr( $limit ); ?>" />
         </p>
         <p>
-            <label for="<?php echo esc_attr($this->get_field_name( 'hide_empty' )); ?>"><?php esc_html_e( 'Hide Empty', NRW_TEXT_DOMAIN ); ?></label>
+            <label for="<?php echo esc_attr($this->get_field_name( 'hide_empty' )); ?>"><?php esc_html_e( 'Hide Empty', LNX_TEXT_DOMAIN ); ?></label>
             <input class="widefat" <?php if ( 1 == $hide_empty ) : ?>checked=""<?php endif; ?> id="<?php echo esc_attr($this->get_field_id( 'hide_empty' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'hide_empty' )); ?>" type="checkbox" />
         </p>
         <p>
-            <label for="<?php echo esc_attr($this->get_field_name( 'parent' )); ?>"><?php esc_html_e( 'Parent', NRW_TEXT_DOMAIN ); ?></label>
+            <label for="<?php echo esc_attr($this->get_field_name( 'parent' )); ?>"><?php esc_html_e( 'Parent', LNX_TEXT_DOMAIN ); ?></label>
             <input class="widefat" <?php if ( '0' == $parent ) : ?>checked=""<?php endif; ?> id="<?php echo esc_attr($this->get_field_id( 'parent' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'parent' )); ?>" type="checkbox" />
             <i>Get only top level categories</i>
         </p>
         <p>
-            <label for="<?php echo esc_attr($this->get_field_name( 'orderby' )); ?>"><?php esc_html_e( 'Order By', NRW_TEXT_DOMAIN ); ?></label>
+            <label for="<?php echo esc_attr($this->get_field_name( 'orderby' )); ?>"><?php esc_html_e( 'Order By', LNX_TEXT_DOMAIN ); ?></label>
             <select class='widefat' id="<?php echo esc_attr($this->get_field_id('orderby')); ?>" name="<?php echo esc_attr($this->get_field_name('orderby')); ?>">
-                <option value='term_id'<?php echo ($orderby == 'term_id') ? 'selected' : ''; ?>><?php esc_html_e('ID', NRW_TEXT_DOMAIN); ?></option>
-                <option value='name'<?php echo ($orderby == 'name') ? 'selected' : ''; ?>><?php esc_html_e('Name', NRW_TEXT_DOMAIN); ?></option>
-                <option value='count'<?php echo ($orderby == 'count') ? 'selected' : ''; ?>><?php esc_html_e('Count', NRW_TEXT_DOMAIN); ?></option>
+                <option value='term_id'<?php echo ($orderby == 'term_id') ? 'selected' : ''; ?>><?php esc_html_e('ID', LNX_TEXT_DOMAIN); ?></option>
+                <option value='name'<?php echo ($orderby == 'name') ? 'selected' : ''; ?>><?php esc_html_e('Name', LNX_TEXT_DOMAIN); ?></option>
+                <option value='count'<?php echo ($orderby == 'count') ? 'selected' : ''; ?>><?php esc_html_e('Count', LNX_TEXT_DOMAIN); ?></option>
             </select>
-            <i><?php esc_html_e('Sort categories alphabetically, by unique Category ID, or by the count of posts in that Category', NRW_TEXT_DOMAIN); ?></i>
+            <i><?php esc_html_e('Sort categories alphabetically, by unique Category ID, or by the count of posts in that Category', LNX_TEXT_DOMAIN); ?></i>
         </p>
         <p>
-            <label for="<?php echo esc_attr($this->get_field_name( 'order' )); ?>"><?php esc_html_e( 'Order', NRW_TEXT_DOMAIN ); ?></label>
+            <label for="<?php echo esc_attr($this->get_field_name( 'order' )); ?>"><?php esc_html_e( 'Order', LNX_TEXT_DOMAIN ); ?></label>
             <select class='widefat' id="<?php echo esc_attr($this->get_field_id('order')); ?>" name="<?php echo esc_attr($this->get_field_name('order')); ?>">
-                <option value='ASC'<?php echo ($order == 'ASC') ? ' selected="selected"' : ''; ?>><?php esc_html_e('ASC', NRW_TEXT_DOMAIN); ?></option>
-                <option value='DESC'<?php echo ($order == 'DESC') ? ' selected="selected"' : ''; ?>><?php esc_html_e('DESC', NRW_TEXT_DOMAIN); ?></option>
+                <option value='ASC'<?php echo ($order == 'ASC') ? ' selected="selected"' : ''; ?>><?php esc_html_e('ASC', LNX_TEXT_DOMAIN); ?></option>
+                <option value='DESC'<?php echo ($order == 'DESC') ? ' selected="selected"' : ''; ?>><?php esc_html_e('DESC', LNX_TEXT_DOMAIN); ?></option>
             </select>
-            <i><?php esc_html_e('Sort order for categories (either ascending or descending). The default is ascending', NRW_TEXT_DOMAIN); ?></i>
+            <i><?php esc_html_e('Sort order for categories (either ascending or descending). The default is ascending', LNX_TEXT_DOMAIN); ?></i>
         </p>
         <?php
     }
 }
 
-function nrw_categories_images_widget_init() {
+function lnx_categories_images_widget_init() {
     register_widget( 'Nrw_Categories_Images' );
 }
-add_action( 'widgets_init', 'nrw_categories_images_widget_init' );
+add_action( 'widgets_init', 'lnx_categories_images_widget_init' );
