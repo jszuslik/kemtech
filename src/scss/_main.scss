@@ -1,0 +1,33 @@
+/*------------------------------------------------------------------/*
+Theme Name: KemTech Theme
+Theme URI: http://github.com/jszuslik/kemtech
+Description: A Responsive WordPress Blog Theme Customized for KemTech
+Author URI: http://www.lanex.com
+Author: Joshua Szuslik
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Version: 0.0.1
+Text domain: kemtech
+Last change:  01-04-2017
+Tags: blog
+Template:         wpissues
+Template Version: 1.0.3
+GitHub Theme URI: https://github.com/jszuslik/kemtech
+GitHub Branch:    master
+*/
+
+@media (min-width:480px){
+  body {
+    color: black;
+  }
+}
+@media (max-width:767px){}
+@media (min-width:768px){}
+@media screen and (min-width:768px){}
+@media (min-width:768px) and (max-width:991px){}
+@media (min-width:992px){}
+@media (min-width:992px) and (max-width:1199px){}
+@media (min-width:1200px){}
+@media screen and (-webkit-min-device-pixel-ratio:0){}
+@media all and (transform-3d),(-webkit-transform-3d){}
+@media print{}
