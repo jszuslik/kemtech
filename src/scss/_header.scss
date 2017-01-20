@@ -1,12 +1,17 @@
+.navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+  margin: 0;
+}
 .navbar-brand {
   height: auto;
   padding: 0;
 }
 .navbar-brand h1 {
   margin: 0;
+  text-transform: uppercase;
 }
 h1 span {
   font-size: 0.6em;
+  text-transform: uppercase;
 }
 .social {
   margin-top: 20px;
@@ -24,16 +29,29 @@ h1 span {
   font-size: 1.7em;
 }
 #menu-primary {
-  padding: 5px 0;
+  padding: 20px 0 0;
 }
 #menu-primary a {
   text-transform: uppercase;
   font-weight: 700;
   font-size: 1.35em;
   letter-spacing: 0.07em;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 25px;
+  padding-right: 25px;
 }
-.navbar {
-  border-bottom: 10px;
+.header-rule-wrapper-outer {
+  overflow-x: hidden;
+}
+.header-rule {
+  margin: 0 -100% 0 0;
+  border-top: 10px solid;
+}
+.navbar h6 {
+  margin: 0;
+}
+.tagline h3 {
+  font-style: italic;
+  letter-spacing: 0.03em;
+  margin: 0;
+  padding-right: 30px;
 }

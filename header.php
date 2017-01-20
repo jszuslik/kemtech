@@ -44,7 +44,18 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/"><h1>KEM TECH<br><span>INDUSTRIES, INC.</span></h1></a>
+            <?php
+                if(get_theme_mod('lnx_company_info_name_1')) {
+                    $name_1 = get_theme_mod('lnx_company_info_name_1');
+                }
+                if(get_theme_mod('lnx_company_info_name_2')) {
+                    $name_2 = get_theme_mod('lnx_company_info_name_2');
+                }
+                if(get_theme_mod('lnx_company_info_name_3')) {
+                    $name_3 = get_theme_mod('lnx_company_info_name_3');
+                }
+            ?>
+            <a class="navbar-brand" href="/"><h1><?php if(get_theme_mod('lnx_company_info_name_1')) { echo get_theme_mod('lnx_company_info_name_1'); } ?><?php if(get_theme_mod('lnx_company_info_name_2')) { echo '<br><span>' . get_theme_mod('lnx_company_info_name_2') . '</span>'; } ?></h1></a>
         </div>
         <?php
         wp_nav_menu( array (
@@ -60,5 +71,12 @@
         );
         ?>
     </div>
+    <div class="container-fluid header-rule-wrapper-outer">
+        <div class="container header-rule-wrapper-inner">
+            <hr class="header-rule" />
+            <?php if(get_theme_mod('lnx_company_info_name_3')) { echo '<h6>' . get_theme_mod('lnx_company_info_name_3') . '</h6>'; } ?>
+            <?php if(get_bloginfo('description')) { echo '<div class="tagline pull-right"><h3>'. get_bloginfo( 'description' ) . '</h3></div>'; } ?>
+        </div>
+    </div>
 </div>
-<div class="container">
+<div class="container-fluid">

@@ -34,10 +34,10 @@ add_action('wp_enqueue_scripts', 'lnx_load_scripts');
 function lnx_load_scripts() {
 
     //CSS
-    wp_enqueue_style('lnx_bootstrap', LNX_LIBS_URI . 'bootstrap/css/bootstrap.min.css');
-    wp_enqueue_style('lnx_font-awesome', LNX_LIBS_URI . 'font-awesome/css/font-awesome.min.css');
-    wp_enqueue_style('lnx_pt_sans', 'https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i');
-    wp_enqueue_style('lnx_theme_style', get_stylesheet_directory_uri() . '/style.css');
+    wp_enqueue_style('lnx-bootstrap', LNX_LIBS_URI . 'bootstrap/css/bootstrap.min.css');
+    wp_enqueue_style('lnx-font-awesome', LNX_LIBS_URI . 'font-awesome/css/font-awesome.min.css');
+    wp_enqueue_style('lnx-pt-sans', 'https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i');
+    wp_enqueue_style('lnx-theme-style', get_stylesheet_directory_uri() . '/style.css');
 
     //JS
     wp_enqueue_script('lnx_bootstrap_scripts', LNX_LIBS_URI . 'bootstrap/js/bootstrap.min.js', array('jquery'), false, true);
@@ -46,6 +46,11 @@ function lnx_load_scripts() {
     if ( is_singular() && get_option( 'thread_comments' ) ) {
         wp_enqueue_script('comment-reply');
     }
+}
+add_action('wp_head', 'lnx_add_typescript_fonts');
+function lnx_add_typescript_fonts() {
+    printf('<script src="https://use.typekit.net/tia0fzy.js"></script>
+<script>try{Typekit.load({ async: false });}catch(e){}</script>');
 }
 
 function lnx_require_file( $path ) {
@@ -177,4 +182,32 @@ function lnx_blog_config()
 
 
     return $lnx_blog;
+}
+
+function lnx_get_ata_id_from_image_url( $attachment_url = ''  ) {
+    global $wpdb;
+    $attachment_id = false;
+
+    // If there is no url, return.
+    if ( '' == $attachment_url )
+        return;
+
+    // Get the upload directory paths
+    $upload_dir_paths = wp_upload_dir();
+
+    // Make sure the upload path base directory exists in the attachment URL, to verify that we're working with a media library image
+    if ( false !== strpos( $attachment_url, $upload_dir_paths['baseurl'] ) ) {
+
+        // If this is the URL of an auto-generated thumbnail, get the URL of the original image
+        $attachment_url = preg_replace( '/-\d+x\d+(?=\.(jpg|jpeg|png|gif)$)/i', '', $attachment_url );
+
+        // Remove the upload path base directory from the attachment URL
+        $attachment_url = str_replace( $upload_dir_paths['baseurl'] . '/', '', $attachment_url );
+
+        // Finally, run a custom database query to get the attachment ID from the modified attachment URL
+        $attachment_id = $wpdb->get_var( $wpdb->prepare( "SELECT wposts.ID FROM $wpdb->posts wposts, $wpdb->postmeta wpostmeta WHERE wposts.ID = wpostmeta.post_id AND wpostmeta.meta_key = '_wp_attached_file' AND wpostmeta.meta_value = '%s' AND wposts.post_type = 'attachment'", $attachment_url ) );
+
+    }
+
+    return $attachment_id;
 }

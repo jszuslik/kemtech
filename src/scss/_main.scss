@@ -10,7 +10,7 @@ Version: 0.0.1
 Text domain: kemtech
 Last change:  01-04-2017
 Tags: blog
-Template:         wpissues
+Template:         kemtech
 Template Version: 1.0.3
 GitHub Theme URI: https://github.com/jszuslik/kemtech
 GitHub Branch:    master
@@ -19,12 +19,12 @@ GitHub Branch:    master
 body {
   background-color: #fff;
   color: #242424;
-  font-family: 'PT Sans', sans-serif;
+  font-family: "myriad-pro",sans-serif;
   font-size: 16px;
   line-height: 18px;
 }
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'PT Sans', sans-serif;
+  font-family: "myriad-pro",sans-serif;
   font-weight: normal;
   line-height: normal;
   margin: 0 0 15px 0;
@@ -37,10 +37,13 @@ h1 {
   font-weight: 700;
 }
 h2 {
-  font-size: 26px;
+  font-size: 2.2em;
+  line-height: 0.54em;
+  font-weight: 700;
 }
 h3 {
-  font-size: 24px;
+  font-size: 1.9em;
+  font-weight: 700;
 }
 h4 {
   font-size: 22px;
@@ -49,7 +52,8 @@ h5 {
   font-size: 20px;
 }
 h6 {
-  font-size: 18px;
+  font-size: 1.08em;
+  font-weight: 700;
 }
 p {
   margin: 0 0 20px 0;

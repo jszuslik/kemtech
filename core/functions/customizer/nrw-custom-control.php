@@ -34,14 +34,14 @@ function lnx_customize_register($wp_customize)
 }
 
 if (class_exists('WP_Customize_Control')) {
-    class WP_Customize_Category_Control extends WP_Customize_Control {
+    class WP_Customize_Pages_Control extends WP_Customize_Control {
         /**
          * Render the control's content.
          *
          * @since 3.4.0
          */
         public function render_content() {
-            $dropdown = wp_dropdown_categories(
+            $dropdown = wp_dropdown_pages(
                 array(
                     'name'              => '_customize-dropdown-categories-' . $this->id,
                     'echo'              => 0,

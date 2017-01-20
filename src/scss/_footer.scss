@@ -1,0 +1,49 @@
+footer {
+  padding: 45px 0;
+}
+footer .logo-wrapper {
+  display: block;
+  margin: 0 auto;
+  max-width: 164px;
+}
+footer h2 {
+  text-transform: uppercase;
+  margin: 0;
+  text-align: center;
+  letter-spacing: 0.01em;
+}
+footer h2:after {
+  display: block;
+  content: '';
+  height: 5px;
+  background-color: white;
+  margin: 2px 1px 1px;
+}
+footer h2 span {
+  font-size: 0.53em;
+  letter-spacing: 0.06em;
+}
+footer h6 {
+  font-size: 0.76em;
+}
+.footer-contact {
+  padding: 30px 0;
+  text-align: center;
+}
+.footer-contact a {
+  margin-right: 20px;
+}
+.footer-contact a .fa {
+  margin-right: 10px;
+}
+.copyright {
+  display: inline-block;
+  padding: 30px 0;
+}
+.footer-logos {
+  display: inline-block;
+}
+.footer-logos img {
+  margin-left: 30px;
+  display: inline-block;
+}
