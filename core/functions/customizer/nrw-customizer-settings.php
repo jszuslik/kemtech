@@ -78,6 +78,54 @@ function lnx_register_theme_customizer( $wp_customize )
         'default' => '',
         'sanitize_callback' => 'lnx_sanitize_default'
     ) );
+    $wp_customize->add_setting( 'lnx_small_funnel_1', array(
+        'default' => '',
+        'sanitize_callback' => 'lnx_sanitize_default'
+    ) );
+    $wp_customize->add_setting( 'lnx_small_funnel_1_url', array(
+        'default' => '',
+        'sanitize_callback' => 'lnx_sanitize_default'
+    ) );
+    $wp_customize->add_setting( 'lnx_small_funnel_1_img', array(
+        'default' => '',
+        'sanitize_callback' => 'lnx_sanitize_default'
+    ) );
+    $wp_customize->add_setting( 'lnx_small_funnel_2', array(
+        'default' => '',
+        'sanitize_callback' => 'lnx_sanitize_default'
+    ) );
+    $wp_customize->add_setting( 'lnx_small_funnel_2_url', array(
+        'default' => '',
+        'sanitize_callback' => 'lnx_sanitize_default'
+    ) );
+    $wp_customize->add_setting( 'lnx_small_funnel_2_img', array(
+        'default' => '',
+        'sanitize_callback' => 'lnx_sanitize_default'
+    ) );
+    $wp_customize->add_setting( 'lnx_small_funnel_3', array(
+        'default' => '',
+        'sanitize_callback' => 'lnx_sanitize_default'
+    ) );
+    $wp_customize->add_setting( 'lnx_small_funnel_3_url', array(
+        'default' => '',
+        'sanitize_callback' => 'lnx_sanitize_default'
+    ) );
+    $wp_customize->add_setting( 'lnx_small_funnel_3_img', array(
+        'default' => '',
+        'sanitize_callback' => 'lnx_sanitize_default'
+    ) );
+    $wp_customize->add_setting( 'lnx_small_funnel_4', array(
+        'default' => '',
+        'sanitize_callback' => 'lnx_sanitize_default'
+    ) );
+    $wp_customize->add_setting( 'lnx_small_funnel_4_url', array(
+        'default' => '',
+        'sanitize_callback' => 'lnx_sanitize_default'
+    ) );
+    $wp_customize->add_setting( 'lnx_small_funnel_4_img', array(
+        'default' => '',
+        'sanitize_callback' => 'lnx_sanitize_default'
+    ) );
 
 
 
@@ -737,6 +785,150 @@ function lnx_register_theme_customizer( $wp_customize )
                 'label'    => 'Large Funnel 2 Image',
                 'section'  => 'lnx_new_section_frontpage_layout',
                 'settings' => 'lnx_large_funnel_2_img',
+            )
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'lnx_frontpage_sml_funnel_1_title',
+            array(
+                'label'      => 'Small Funnel 1 Title',
+                'section'    => 'lnx_new_section_frontpage_layout',
+                'settings'   => 'lnx_small_funnel_1',
+                'type'		 => 'text'
+            )
+        )
+    );
+
+    $wp_customize->add_control(
+        new WP_Customize_Pages_Control(
+            $wp_customize,
+            'lnx_frontpage_small_funnel_1_url',
+            array(
+                'label'    => 'Small Funnel 1 Link',
+                'section'  => 'lnx_new_section_frontpage_layout',
+                'settings' => 'lnx_small_funnel_1_url',
+            )
+        )
+    );
+
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'lnx_frontpage_sml_funnel_1_img',
+            array(
+                'label'    => 'Small Funnel 1 Image',
+                'section'  => 'lnx_new_section_frontpage_layout',
+                'settings' => 'lnx_small_funnel_1_img',
+            )
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'lnx_frontpage_sml_funnel_2_title',
+            array(
+                'label'      => 'Small Funnel 2 Title',
+                'section'    => 'lnx_new_section_frontpage_layout',
+                'settings'   => 'lnx_small_funnel_2',
+                'type'		 => 'text'
+            )
+        )
+    );
+
+    $wp_customize->add_control(
+        new WP_Customize_Pages_Control(
+            $wp_customize,
+            'lnx_frontpage_sml_funnel_2_url',
+            array(
+                'label'    => 'Small Funnel 2 Link',
+                'section'  => 'lnx_new_section_frontpage_layout',
+                'settings' => 'lnx_small_funnel_2_url',
+            )
+        )
+    );
+
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'lnx_frontpage_sml_funnel_2_img',
+            array(
+                'label'    => 'Small Funnel 2 Image',
+                'section'  => 'lnx_new_section_frontpage_layout',
+                'settings' => 'lnx_small_funnel_2_img',
+            )
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'lnx_frontpage_sml_funnel_3_title',
+            array(
+                'label'      => 'Small Funnel 3 Title',
+                'section'    => 'lnx_new_section_frontpage_layout',
+                'settings'   => 'lnx_small_funnel_3',
+                'type'		 => 'text'
+            )
+        )
+    );
+
+    $wp_customize->add_control(
+        new WP_Customize_Pages_Control(
+            $wp_customize,
+            'lnx_frontpage_sml_funnel_3_url',
+            array(
+                'label'    => 'Small Funnel 3 Link',
+                'section'  => 'lnx_new_section_frontpage_layout',
+                'settings' => 'lnx_small_funnel_3_url',
+            )
+        )
+    );
+
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'lnx_frontpage_sml_funnel_3_img',
+            array(
+                'label'    => 'Small Funnel 3 Image',
+                'section'  => 'lnx_new_section_frontpage_layout',
+                'settings' => 'lnx_small_funnel_3_img',
+            )
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'lnx_frontpage_sml_funnel_4_title',
+            array(
+                'label'      => 'Small Funnel 4 Title',
+                'section'    => 'lnx_new_section_frontpage_layout',
+                'settings'   => 'lnx_small_funnel_4',
+                'type'		 => 'text'
+            )
+        )
+    );
+
+    $wp_customize->add_control(
+        new WP_Customize_Pages_Control(
+            $wp_customize,
+            'lnx_frontpage_sml_funnel_4_url',
+            array(
+                'label'    => 'Small Funnel 4 Link',
+                'section'  => 'lnx_new_section_frontpage_layout',
+                'settings' => 'lnx_small_funnel_4_url',
+            )
+        )
+    );
+
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'lnx_frontpage_sml_funnel_4_img',
+            array(
+                'label'    => 'Small Funnel 4 Image',
+                'section'  => 'lnx_new_section_frontpage_layout',
+                'settings' => 'lnx_small_funnel_4_img',
             )
         )
     );

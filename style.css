@@ -6,12 +6,12 @@ Author URI: http://www.lanex.com
 Author: Joshua Szuslik
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Version: 0.0.2
+Version: 0.0.3
 Text domain: kemtech
 Last change:  01-04-2017
 Tags: blog
 Template:         kemtech
-Template Version: 0.0.2
+Template Version: 0.0.3
 GitHub Theme URI: https://github.com/jszuslik/kemtech
 GitHub Branch:    master
 */
@@ -322,3 +322,57 @@ footer h6 {
 .footer-logos img {
   margin-left: 30px;
   display: inline-block; }
+
+#funnels {
+  margin-top: 10px;
+  margin-bottom: 15px; }
+
+.funnel a {
+  color: #ffffff; }
+
+.lrg-funnel-outer {
+  position: relative;
+  overflow: hidden; }
+
+.lrg-funnel-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
+.lrg-funnel-inner h3 {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 5.5em; }
+
+#small-funnels {
+  padding-top: 15px; }
+
+.sml-funnel-outer {
+  position: relative;
+  overflow: hidden; }
+
+.sml-funnel-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 95%;
+  border: 1px solid #ffffff; }
+
+.sml-funnel-inner h4 {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 3.3em;
+  margin: 0;
+  line-height: 1em;
+  padding: 10px 20px; }
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.35);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0; }
