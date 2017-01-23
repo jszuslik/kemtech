@@ -7,6 +7,7 @@ define('LNX_CORE_CLASSES', LNX_CORE_PATH . 'classes/');
 define('LNX_CORE_FUNCTIONS', LNX_CORE_PATH . 'functions/');
 define('LNX_CORE_WIDGETS', LNX_CORE_PATH . 'widgets/');
 define('LNX_TEXT_DOMAIN', 'kemtech');
+define( 'GITHUB_UPDATER_EXTENDED_NAMING', true );
 
 // Set content width
 if (!isset( $content_width ) ) { $content_width = 1170; }
