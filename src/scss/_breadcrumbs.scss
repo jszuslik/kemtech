@@ -1,0 +1,10 @@
+.breadcrumb {
+  background: none;
+  border-bottom: 1px solid #dcdcdc;
+  border-radius: 0;
+  margin-bottom: 1.875em;
+  padding: 0px 0.938em 0.938em 0;
+}
+.breadcrumb > .active {
+  background-color: transparent;
+}

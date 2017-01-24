@@ -86,9 +86,9 @@
             <div class="footer-logos pull-right">
                 <?php if(get_theme_mod('lnx_footer_logo_1')) : ?>
                     <?php $img_id_1 = lnx_get_ata_id_from_image_url(get_theme_mod('lnx_footer_logo_1')); ?>
-                    <?php echo wp_get_attachment_image($img_id_1); ?>
+                    <?php echo wp_get_attachment_image($img_id_1, 'full', '', ['class' => 'img-responsive']); ?>
                     <?php $img_id_2 = lnx_get_ata_id_from_image_url(get_theme_mod('lnx_footer_logo_2')); ?>
-                    <?php echo wp_get_attachment_image($img_id_2); ?>
+                    <?php echo wp_get_attachment_image($img_id_2, 'full', '', ['class' => 'img-responsive']); ?>
                 <?php endif; ?>
             </div>
         </div>

@@ -14,6 +14,9 @@ if (have_posts()): while (have_posts()) : the_post();
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <?php the_content(); ?>
+                    <div class="request-button">
+                        <a href="#">REQUEST A MSDS</a>
+                    </div>
                 </div>
             </div>
         </div>

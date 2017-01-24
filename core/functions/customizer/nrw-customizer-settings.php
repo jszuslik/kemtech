@@ -318,6 +318,10 @@ function lnx_register_theme_customizer( $wp_customize )
         'default'           => '#eee',
         'sanitize_callback' => 'lnx_sanitize_default'
     ) );
+    $wp_customize->add_setting( 'lnx_primary_content_color', array(
+        'default'           => '#727272',
+        'sanitize_callback' => 'lnx_sanitize_default'
+    ) );
     $wp_customize->add_setting( 'lnx_header_background_color', array(
         'default'           => '#ffffff',
         'sanitize_callback' => 'lnx_sanitize_default'
@@ -1165,7 +1169,19 @@ function lnx_register_theme_customizer( $wp_customize )
                 'label'      => 'Secondary Accent Color Color',
                 'section'    => 'lnx_new_section_color_accent',
                 'settings'   => 'lnx_secondary_accent_color',
-                'priority'	 => 1
+                'priority'	 => 2
+            )
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'primary_content_color',
+            array(
+                'label'      => 'Primary Content Color',
+                'section'    => 'lnx_new_section_color_accent',
+                'settings'   => 'lnx_primary_content_color',
+                'priority'	 => 3
             )
         )
     );
@@ -1177,7 +1193,7 @@ function lnx_register_theme_customizer( $wp_customize )
                 'label'      => 'Header Background Color',
                 'section'    => 'lnx_new_section_color_accent',
                 'settings'   => 'lnx_header_background_color',
-                'priority'	 => 2
+                'priority'	 => 4
             )
         )
     );
@@ -1189,7 +1205,7 @@ function lnx_register_theme_customizer( $wp_customize )
                 'label'      => 'Header Accent Color',
                 'section'    => 'lnx_new_section_color_accent',
                 'settings'   => 'lnx_header_accent_color',
-                'priority'	 => 3
+                'priority'	 => 5
             )
         )
     );
@@ -1201,7 +1217,7 @@ function lnx_register_theme_customizer( $wp_customize )
                 'label'      => 'Header Menu Color',
                 'section'    => 'lnx_new_section_color_accent',
                 'settings'   => 'lnx_header_menu_color',
-                'priority'	 => 4
+                'priority'	 => 6
             )
         )
     );
@@ -1213,7 +1229,7 @@ function lnx_register_theme_customizer( $wp_customize )
                 'label'      => 'Footer Background Color',
                 'section'    => 'lnx_new_section_color_accent',
                 'settings'   => 'lnx_footer_background_color',
-                'priority'	 => 5
+                'priority'	 => 7
             )
         )
     );
@@ -1225,7 +1241,7 @@ function lnx_register_theme_customizer( $wp_customize )
                 'label'      => 'Footer Accent Color',
                 'section'    => 'lnx_new_section_color_accent',
                 'settings'   => 'lnx_footer_font_color',
-                'priority'	 => 6
+                'priority'	 => 8
             )
         )
     );

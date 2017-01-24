@@ -12,6 +12,12 @@ define( 'GITHUB_UPDATER_EXTENDED_NAMING', true );
 // Set content width
 if (!isset( $content_width ) ) { $content_width = 1170; }
 
+function p($var) {
+    echo '<pre>';
+    var_dump($var);
+    echo '</pre>';
+}
+
 // Theme setup
 add_action('after_setup_theme', 'lnx_setup');
 function lnx_setup() {
@@ -24,7 +30,8 @@ function lnx_setup() {
     register_nav_menus(
         array(
             'primary' => esc_html__('Primary Menu', LNX_TEXT_DOMAIN),
-            'topbar'  => esc_html__('Topbar Menu', LNX_TEXT_DOMAIN)
+            'topbar'  => esc_html__('Topbar Menu', LNX_TEXT_DOMAIN),
+            'sidebar_menu' => esc_html__('Sidebar Menu', LNX_TEXT_DOMAIN)
         )
     );
     add_theme_support('post-formats', array('video', 'audio', 'gallery'));
@@ -211,4 +218,17 @@ function lnx_get_ata_id_from_image_url( $attachment_url = ''  ) {
     }
 
     return $attachment_id;
+}
+// Register sidebar
+add_action('widgets_init', 'theme_register_sidebar');
+function theme_register_sidebar() {
+    if ( function_exists('register_sidebar') ) {
+        register_sidebar(array(
+            'id' => 'sidebar-1',
+            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'after_widget' => '</div>',
+            'before_title' => '<h4>',
+            'after_title' => '</h4>',
+        ));
+    }
 }

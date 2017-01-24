@@ -1,0 +1,99 @@
+.primary-sidebar {
+  border: 1px solid #eaeaea;
+}
+.level-1,
+.sub-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.level-1 li {
+  background: #eee;
+  border-bottom: 1px solid #e4e4e4;
+  margin: 0;
+}
+.level-1 a {
+  background: #eee;
+  display: block;
+  color: #333;
+  line-height: 1.5;
+  padding: 0.625em 0 0.625em 34px;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+.level-1 a:hover {
+  background: #ffffff;
+}
+.level-1 .current_page_item,
+.level-1 .current-page-ancestor,
+.level-1 .current-menu-parent,
+.level-1 .current_page_item:hover,
+.level-1 .current-page-ancestor:hover {
+  background: #fff;
+}
+.level-1 .current_page_item a,
+.level-1 .current-page-ancestor a {
+  line-height: 1.5;
+}
+.level-1 .current-menu-parent a {
+  background: #174661;
+  color: #ffffff;
+}
+.level-1 .current_page_item .sub-menu li,
+.level-1 .current-page-ancestor .sub-menu li,
+.level-1 .current-menu-parent .sub-menu li {
+  background-color: #fff;
+  display: block;
+}
+.sub-menu li {
+  background-color: #fff;
+  border: none;
+  display: none;
+}
+.level-1 .current_page_item .sub-menu li,
+.level-1 .current_page_ancestor .sub-menu li,
+.level-1 .current-menu-parent .sub-menu li {
+
+}
+.level-1 .current_page_item .sub-menu li a,
+.level-1 .current-page-ancestor .sub-menu li a,
+.level-1 .current-menu-parent .sub-menu li a {
+  background: #ffffff;
+  color: #333;
+  -webkit-transition: all 0.15s linear;
+  transition: all 0.15s linear;
+}
+.level-1 .sub-menu a:before {
+  content: "\f0da";
+  color: #333;
+  font-family: FontAwesome;
+  font-size: 1.063em;
+  line-height: 1;
+  padding: 0 0.500em;
+}
+.level-1 .current_page_item .sub-menu li:hover,
+.level-1 .current-page-ancestor .sub-menu li:hover,
+.level-1 .current-menu-parent .sub-menu li:hover {
+  background-color: #174661;
+}
+.level-1 .current_page_item .sub-menu li:hover a,
+.level-1 .current-page-ancestor .sub-menu li:hover a,
+.level-1 .current-menu-parent .sub-menu li:hover a {
+  color: #ef4035;
+}
+.level-1 .current_page_ancestor .sub-menu .current-menu-item a,
+.level-1 .current-menu-parent .sub-menu .current-menu-item a {
+  color: #333;
+  font-weight: 700;
+}
+.level-1 .current_page_ancestor .sub-menu .current-menu-item a:before,
+.level-1 .current-menu-parent .sub-menu .current-menu-item a:before {
+  color: #333;
+  font-style: normal;
+  -webkit-transition: all 0.15s linear;
+  transition: all 0.15s linear;
+}
+.level-1 .current_page_ancestor .sub-menu li:hover a:before,
+.level-1 .current-menu-parent .sub-menu li:hover a:before {
+  color: #ef4035;
+}

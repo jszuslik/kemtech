@@ -2,6 +2,12 @@
   margin-top: 10px;
   margin-bottom: 15px;
 }
+.funnel-odd {
+  padding-right: 7.5px;
+}
+.funnel-even {
+  padding-left: 7.5px;
+}
 .funnel a {
   color: #ffffff;
 }
@@ -18,10 +24,10 @@
 .lrg-funnel-inner h3 {
   text-transform: uppercase;
   text-align: center;
-  font-size: 5.5em;
+  font-size: 1.7em;
 }
-#small-funnels {
-  padding-top: 15px;
+#small-funnels .funnel {
+  margin-bottom: 15px;
 }
 .sml-funnel-outer {
   position: relative;
@@ -39,10 +45,10 @@
   text-align: center;
   text-transform: uppercase;
   font-weight: 700;
-  font-size: 3.3em;
+  font-size: 1em;
   margin: 0;
   line-height: 1em;
-  padding: 10px 20px;
+  padding: 10px 5px;
 }
 .overlay {
   background-color: rgba(0, 0, 0, 0.35);
@@ -52,3 +58,81 @@
   top: 0;
   left: 0;
 }
+#main-content h3 {
+  font-size: 1.2em;
+  font-style: italic;
+}
+.request-button {
+  padding: 20px 0;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.request-button a {
+  font-size: 1.2em;
+  letter-spacing: 0.06em;
+  padding: 15px 60px;
+  -webkit-transition: all 0.15s linear;
+  transition: all 0.15s linear;
+}
+.request-button a:hover {
+  border: 3px solid;
+}
+
+@media (min-width:480px){
+  .lrg-funnel-inner h3 {
+    font-size: 2em;
+  }
+  .sml-funnel-inner h4 {
+    font-size: 1.4em;
+    padding: 10px 5px;
+  }
+}
+@media (max-width:767px){}
+@media (min-width:768px){
+  .lrg-funnel-inner h3 {
+    font-size: 3.2em;
+  }
+  .sml-funnel-inner h4 {
+    font-size: 2.5em;
+  }
+  #main-content h3 {
+    font-size: 1.8em;
+  }
+}
+@media screen and (min-width:768px){}
+@media (min-width:768px) and (max-width:991px){}
+@media (min-width:992px){
+  .funnel-odd {
+    padding-right: 15px;
+  }
+  .funnel-even {
+    padding-left: 15px;
+  }
+  .lrg-funnel-inner h3 {
+    font-size: 5.5em;
+  }
+  #small-funnels {
+    padding-top: 15px;
+  }
+  .sml-funnel-inner h4 {
+    font-size: 1.5em;
+    padding: 10px 0;
+  }
+  #main-content .col-lg-12 {
+    padding: 35px 85px;
+  }
+  #main-content h3 {
+    font-size: 1.9em;
+    font-style: italic;
+  }
+}
+@media (min-width:992px) and (max-width:1199px){}
+@media (min-width:1200px){
+  .sml-funnel-inner h4 {
+    font-size: 2.6em;
+  }
+}
+@media screen and (-webkit-min-device-pixel-ratio:0){}
+@media all and (transform-3d),(-webkit-transform-3d){}
+@media print{}
+
