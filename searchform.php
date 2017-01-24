@@ -1,7 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Joshua
- * Date: 1/4/2017
- * Time: 11:55 AM
- */
+?>
+
+<form action="/" method="get" class="search-form">
+    <input type="text" name="s" id="search" class="search-input-field" value="" placeholder="Search"/>
+</form>
