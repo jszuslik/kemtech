@@ -6,11 +6,11 @@ Author URI: http://www.lanex.com
 Author: Joshua Szuslik
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Version: 0.0.89
+Version: 0.1.0
 Last change:  01-24-2017
 Tags: blog
 Template:         kemtech
-Template Version: 0.0.9
+Template Version: 0.1.0
 GitHub Theme URI: https://github.com/jszuslik/kemtech
 GitHub Branch:    master
 */
@@ -498,6 +498,10 @@ footer .footer-logos {
 .lrg-funnel-outer {
   position: relative;
   overflow: hidden; }
+
+.lrg-funnel-outer img,
+.sml-funnel-outer img {
+  width: 100%; }
 
 .lrg-funnel-inner {
   position: absolute;
