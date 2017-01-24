@@ -1,11 +1,34 @@
+<?php
+/**
+ * Theme: kemtech
+ *
+ * The template for displaying 404 pages (Not Found).
+ *
+ * @package kemtech
+ */
+?>
 <?php get_header(); ?>
-    <div class="container">
-        <div id="main">
-            <div class="error-page">
-                <h1>404</h1>
-                <p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', LNX_TEXT_DOMAIN ); ?></p>
-                <?php get_search_form(); ?>
+<section class="all_page_content">
+    <div class="color_wrap">
+        <div class="grad_wrapper">
+            <div class="container">
+                <div id="main-grid" class="row">
+                    <?php get_sidebar(); ?>
+                    <div id="primary" class="content-area col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                        <main id="main" class="site-main" role="main">
+                            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                                <div class="entry-header">
+                                    <h1 class="entry-title">Oops! That page can't be found</h1>
+                                </div>
+                                <div class="entry-content">
+                                    <h3>Or as nerds would say, its a "404 Error"</h3>
+                                </div>
+                            </article>
+                        </main>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+</section>
 <?php get_footer(); ?>

@@ -1,5 +1,5 @@
 <div class="hidden-xs hidden-sm col-md-3 col-lg-3">
-    <?php if (is_page() || is_single() || is_archive() || is_home()) : ?>
+    <?php if (is_page() || is_single() || is_archive() || is_home() || is_404()) : ?>
     <div id="secondary">
         <?php
         $sidebarNav = array(

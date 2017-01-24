@@ -1,29 +1,49 @@
 <?php
-get_header();
-if ( get_theme_mod('lnx_featured_slider') ) {
-    get_template_part('template-parts/featured', 'slider');
-}
-
-if ( get_theme_mod('lnx_promobox_show') ) {
-    get_template_part('template-parts/funnel', 'boxes');
-}
-
-$lnx_blog_config = lnx_blog_config();
+/**
+ * Theme: kemtech
+ *
+ * The main template file
+ *
+ * This is the most generic template file in a WordPress theme
+ * and one of the two required files for a theme (the other being style.css).
+ * It is used to display a page when nothing more specific matches a query.
+ * E.g., it puts together the home page when no home.php file exists.
+ * Learn more: http://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package kemtech
+ */
 ?>
-    <div class="row">
-        <div class="col-md-<?php echo esc_attr( $lnx_blog_config['column'] ); ?> col-sm-<?php echo esc_attr( $lnx_blog_config['column_sm'] ); ?>">
-            <?php
-            if ( $lnx_blog_config['layout'] == '2col_grid' ) {
-                get_template_part('loop', '2col-grid');
-            } elseif ( $lnx_blog_config['layout'] == '3col_grid' ) {
-                get_template_part('loop', '3col-grid');
-            } else {
-                get_template_part('loop', 'standard');
-            }
-            ?>
+<?php get_header(); ?>
+<section class="all_page_content">
+    <div class="color_wrap">
+        <div class="grad_wrapper">
+            <div class="container">
+                <div id="main-grid" class="row">
+                    <?php get_sidebar(); ?>
+                    <div id="primary" class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                        <main id="main" class="site-main" role="main">
+                            <?php if( have_posts() ) : ?>
+                                <?php /* Start the loop */ ?>
+                                <?php while ( have_posts() ) : the_post(); ?>
+
+                                    <?php
+                                    /* Include the Post-Format-specific template for the content.
+                                    * If you want to override this in a child theme, then include a file
+                                    * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+                                    */
+                                    get_template_part( 'template-parts/content', get_post_format() );
+                                    ?>
+                                <?php endwhile; ?>
+                                <?php get_template_part( 'content', 'navigation' ); ?>
+                            <?php else : ?>
+                                <?php get_template_part( 'no-results', 'index' ); ?>
+                            <?php endif; ?>
+                        </main>
+                    </div>
+
+                </div>
+            </div>
         </div>
-        <?php if ( !$lnx_blog_config['disable_sidebar'] ) : ?>
-            <div class="col-md-3 col-sm-4 sidebar"><?php get_sidebar(); ?></div>
-        <?php endif; ?>
     </div>
+</section>
 <?php get_footer(); ?>
