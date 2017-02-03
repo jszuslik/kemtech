@@ -17,16 +17,6 @@ function lnx_register_theme_customizer( $wp_customize )
         'description' => null,
         'priority' => 2
     ) );
-    $wp_customize->add_section( 'lnx_new_section_page_layout' , array(
-        'title' => 'Page Settings',
-        'description' => '',
-        'priority' => 3
-    ) );
-    $wp_customize->add_section( 'lnx_new_section_promobox', array(
-        'title' => 'Promo Boxes',
-        'description' => null,
-        'priority' => 4
-    ) );
     $wp_customize->add_section( 'lnx_new_section_company_info', array(
         'title' => 'Company Contact Information',
         'description' => null,
@@ -123,59 +113,6 @@ function lnx_register_theme_customizer( $wp_customize )
         'sanitize_callback' => 'lnx_sanitize_default'
     ) );
     $wp_customize->add_setting( 'lnx_small_funnel_4_img', array(
-        'default' => '',
-        'sanitize_callback' => 'lnx_sanitize_default'
-    ) );
-
-
-
-    /** PromoBox */
-    $wp_customize->add_setting( 'lnx_promobox_show', array(
-        'default' => '',
-        'sanitize_callback' => 'lnx_sanitize_default'
-    ) );
-
-    $wp_customize->add_setting( 'lnx_promobox_one_title', array(
-        'default' => '',
-        'sanitize_callback' => 'lnx_sanitize_default'
-    ) );
-
-    $wp_customize->add_setting( 'lnx_promobox_one_link', array(
-        'default' => '',
-        'sanitize_callback' => 'lnx_sanitize_default'
-    ) );
-
-    $wp_customize->add_setting( 'lnx_promobox_one_image', array(
-        'default' => '',
-        'sanitize_callback' => 'lnx_sanitize_default'
-    ) );
-
-    $wp_customize->add_setting( 'lnx_promobox_two_title', array(
-        'default' => '',
-        'sanitize_callback' => 'lnx_sanitize_default'
-    ) );
-
-    $wp_customize->add_setting( 'lnx_promobox_two_link', array(
-        'default' => '',
-        'sanitize_callback' => 'lnx_sanitize_default'
-    ) );
-
-    $wp_customize->add_setting( 'lnx_promobox_two_image', array(
-        'default' => '',
-        'sanitize_callback' => 'lnx_sanitize_default'
-    ) );
-
-    $wp_customize->add_setting( 'lnx_promobox_three_title', array(
-        'default' => '',
-        'sanitize_callback' => 'lnx_sanitize_default'
-    ) );
-
-    $wp_customize->add_setting( 'lnx_promobox_three_link', array(
-        'default' => '',
-        'sanitize_callback' => 'lnx_sanitize_default'
-    ) );
-
-    $wp_customize->add_setting( 'lnx_promobox_three_image', array(
         'default' => '',
         'sanitize_callback' => 'lnx_sanitize_default'
     ) );
@@ -376,134 +313,8 @@ function lnx_register_theme_customizer( $wp_customize )
         )
     );
 
-    /** PromoBox */
-    $wp_customize->add_control(
-        new WP_Customize_Control(
-            $wp_customize,
-            'lnx_promobox_show',
-            array(
-                'label'      => 'Show Promobox',
-                'section'    => 'lnx_new_section_promobox',
-                'settings'   => 'lnx_promobox_show',
-                'type'		 => 'checkbox'
-            )
-        )
-    );
 
-    $wp_customize->add_control(
-        new WP_Customize_Control(
-            $wp_customize,
-            'lnx_promobox_one_title',
-            array(
-                'label'      => 'Box 1 # Title',
-                'section'    => 'lnx_new_section_promobox',
-                'settings'   => 'lnx_promobox_one_title',
-                'type'		 => 'text'
-            )
-        )
-    );
-
-    $wp_customize->add_control(
-        new WP_Customize_Control(
-            $wp_customize,
-            'lnx_promobox_one_link',
-            array(
-                'label'      => 'Box 1 # URL',
-                'section'    => 'lnx_new_section_promobox',
-                'settings'   => 'lnx_promobox_one_link',
-                'type'		 => 'text'
-            )
-        )
-    );
-
-    $wp_customize->add_control(
-        new WP_Customize_Image_Control(
-            $wp_customize,
-            'lnx_promobox_one_image',
-            array(
-                'label'      => 'Box 1 # Image',
-                'section'    => 'lnx_new_section_promobox',
-                'settings'   => 'lnx_promobox_one_image'
-            )
-        )
-    );
-
-    $wp_customize->add_control(
-        new WP_Customize_Control(
-            $wp_customize,
-            'lnx_promobox_two_title',
-            array(
-                'label'      => 'Box 2 # Title',
-                'section'    => 'lnx_new_section_promobox',
-                'settings'   => 'lnx_promobox_two_title',
-                'type'		 => 'text'
-            )
-        )
-    );
-
-    $wp_customize->add_control(
-        new WP_Customize_Control(
-            $wp_customize,
-            'lnx_promobox_two_link',
-            array(
-                'label'      => 'Box 2 # URL',
-                'section'    => 'lnx_new_section_promobox',
-                'settings'   => 'lnx_promobox_two_link',
-                'type'		 => 'text'
-            )
-        )
-    );
-
-    $wp_customize->add_control(
-        new WP_Customize_Image_Control(
-            $wp_customize,
-            'lnx_promobox_two_image',
-            array(
-                'label'      => 'Box 2 # Image',
-                'section'    => 'lnx_new_section_promobox',
-                'settings'   => 'lnx_promobox_two_image'
-            )
-        )
-    );
-
-    $wp_customize->add_control(
-        new WP_Customize_Control(
-            $wp_customize,
-            'lnx_promobox_three_title',
-            array(
-                'label'      => 'Box 3 # Title',
-                'section'    => 'lnx_new_section_promobox',
-                'settings'   => 'lnx_promobox_three_title',
-                'type'		 => 'text'
-            )
-        )
-    );
-
-    $wp_customize->add_control(
-        new WP_Customize_Control(
-            $wp_customize,
-            'lnx_promobox_three_link',
-            array(
-                'label'      => 'Box 3 # URL',
-                'section'    => 'lnx_new_section_promobox',
-                'settings'   => 'lnx_promobox_three_link',
-                'type'		 => 'text'
-            )
-        )
-    );
-
-    $wp_customize->add_control(
-        new WP_Customize_Image_Control(
-            $wp_customize,
-            'lnx_promobox_three_image',
-            array(
-                'label'      => 'Box 3 # Image',
-                'section'    => 'lnx_new_section_promobox',
-                'settings'   => 'lnx_promobox_three_image'
-            )
-        )
-    );
-
+    // Company Info
     $wp_customize->add_control(
         new WP_Customize_Control(
             $wp_customize,
@@ -937,60 +748,6 @@ function lnx_register_theme_customizer( $wp_customize )
         )
     );
 
-    // Featured area
-    $wp_customize->add_control(
-        new WP_Customize_Control(
-            $wp_customize,
-            'featured_slider',
-            array(
-                'label'      => 'Enable Featured Slider',
-                'section'    => 'lnx_new_section_page_layout',
-                'settings'   => 'lnx_featured_slider',
-                'type'		 => 'checkbox',
-                'priority'	 => 2
-            )
-        )
-    );
-
-    $wp_customize->add_control(
-        new WP_Customize_Pages_Control(
-            $wp_customize,
-            'featured_cat',
-            array(
-                'label'    => 'Select Featured Category',
-                'settings' => 'lnx_featured_cat',
-                'section'  => 'lnx_new_section_page_layout',
-                'priority'	 => 3
-            )
-        )
-    );
-    $wp_customize->add_control(
-        new WP_Customize_Control(
-            $wp_customize,
-            'featured_id',
-            array(
-                'label'      => 'Select featured post/page IDs',
-                'section'    => 'lnx_new_section_page_layout',
-                'settings'   => 'lnx_featured_id',
-                'type'		 => 'text',
-                'priority'	 => 4
-            )
-        )
-    );
-
-    $wp_customize->add_control(
-        new Customize_Number_Control(
-            $wp_customize,
-            'featured_slider_slides',
-            array(
-                'label'      => 'Amount of Slides',
-                'section'    => 'lnx_new_section_page_layout',
-                'settings'   => 'lnx_featured_slider_slides',
-                'type'		 => 'number',
-                'priority'	 => 5
-            )
-        )
-    );
     // Social Media
     $wp_customize->add_control(
         new WP_Customize_Control(
